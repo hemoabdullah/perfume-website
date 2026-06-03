@@ -146,8 +146,8 @@ function loadProductDetail() {
                     <h3>Order Now</h3>
                     <p>Ready to experience this luxurious scent? Reach out to us through any of our contact channels.</p>
                     <div class="order-buttons">
-                        <a href="https://wa.me/?text=Hi%20Timeless%20Scent%21%20I%27m%20interested%20in%20${encodeURIComponent(product.name)}" target="_blank" class="btn btn-primary">Message on WhatsApp</a>
-                        <a href="mailto:hello@timelessscent.com?subject=Inquiry%20about%20${encodeURIComponent(product.name)}" class="btn btn-secondary">Email Us</a>
+                        <a href="https://shopee.co.id/timelessscent__" target="_blank" class="btn btn-primary">Shop on Shopee</a>
+                        <a href="https://wa.me/62088805204080?text=Hi%20Timeless%20Scent%21%20I%27m%20interested%20in%20${encodeURIComponent(product.name)}" target="_blank" class="btn btn-secondary">Message WhatsApp</a>
                     </div>
                 </div>
             </div>
