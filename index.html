@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeless Scent - Luxury Perfume Brand</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">✧ TIMELESS SCENT ✧</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="admin.html" class="nav-link nav-admin">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">TIMELESS SCENT</h1>
+            <p class="hero-subtitle">Where Luxury Meets Fragrance</p>
+            <p class="hero-description">Discover the art of fine perfumery. Each scent tells a story of elegance, sophistication, and timeless beauty.</p>
+            <div class="hero-buttons">
+                <a href="products.html" class="btn btn-primary">Explore Products</a>
+                <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Brand Introduction -->
+    <section class="brand-intro">
+        <div class="container">
+            <h2 class="section-title">Our Craft</h2>
+            <p class="brand-text">At Timeless Scent, we believe that fragrance is more than a scent—it's an experience, a memory, a moment frozen in time. Each perfume in our collection is meticulously crafted using the finest ingredients from around the world.</p>
+            <div class="brand-features">
+                <div class="feature">
+                    <div class="feature-icon">🌹</div>
+                    <h3>Premium Quality</h3>
+                    <p>Sourced from the finest fragrance suppliers worldwide</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✨</div>
+                    <h3>Artisan Crafted</h3>
+                    <p>Carefully blended to perfection by master perfumers</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👑</div>
+                    <h3>Luxury Experience</h3>
+                    <p>Designed for those who appreciate the finer things</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Featured Collection</h2>
+            <div class="products-grid" id="featuredGrid">
+                <!-- Products will be loaded here by JavaScript -->
+                <div class="empty-state">
+                    <p>No products yet. Visit the <a href="admin.html">admin panel</a> to add your first perfume.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Experience Luxury?</h2>
+            <p>Browse our complete collection of premium fragrances</p>
+            <a href="products.html" class="btn btn-large">View All Products</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TIMELESS SCENT</h3>
+                    <p>Luxury fragrances for the discerning taste</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="admin.html">Admin</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" class="social-icon">Instagram</a>
+                        <a href="https://tiktok.com" target="_blank" class="social-icon">TikTok</a>
+                        <a href="https://wa.me/" target="_blank" class="social-icon">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Timeless Scent. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        loadFeaturedProducts();
+    </script>
+</body>
+</html>

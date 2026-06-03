@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Timeless Scent</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">✧ TIMELESS SCENT ✧</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="admin.html" class="nav-link nav-admin active">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Admin Section -->
+    <section class="admin-section">
+        <div class="container admin-container">
+            <div class="admin-header">
+                <h1>Admin Panel</h1>
+                <p>Manage your luxury perfume collection</p>
+            </div>
+
+            <div class="admin-grid">
+                <!-- Add Product Form -->
+                <div class="admin-panel">
+                    <h2>Add New Product</h2>
+                    <form id="productForm" onsubmit="handleAddProduct(event)">
+                        <div class="form-group">
+                            <label>Product Image *</label>
+                            <input type="file" id="productImage" accept="image/*" required>
+                            <small>Upload perfume bottle image</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Product Name *</label>
+                            <input type="text" id="productName" placeholder="e.g., AEON" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Scent Character *</label>
+                            <input type="text" id="scentCharacter" placeholder="e.g., Creamy • Tobacco • Warm • Addictive" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Top Notes (comma separated) *</label>
+                            <input type="text" id="topNotes" placeholder="e.g., Vanilla Cream, Soft Sweet Accord" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Heart Notes (comma separated) *</label>
+                            <input type="text" id="heartNotes" placeholder="e.g., Tobacco Leaf, Tonka Bean, Cashmere Wood" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Base Notes (comma separated) *</label>
+                            <input type="text" id="baseNotes" placeholder="e.g., Madagascar Vanilla, Amber, White Musk" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea id="description" placeholder="Describe your perfume..." rows="4"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Fragrance Story</label>
+                            <textarea id="story" placeholder="Tell the story behind this fragrance..." rows="4"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Add Product</button>
+                    </form>
+                    <div id="formMessage"></div>
+                </div>
+
+                <!-- Products List -->
+                <div class="admin-panel">
+                    <h2>Your Products</h2>
+                    <div id="productsList" class="products-list">
+                        <p class="empty-state">No products yet. Add your first perfume!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Export/Import Section -->
+            <div class="admin-panel admin-actions">
+                <h2>Data Management</h2>
+                <div class="action-buttons">
+                    <button onclick="exportProducts()" class="btn btn-secondary">Export Products (JSON)</button>
+                    <button onclick="document.getElementById('importFile').click()" class="btn btn-secondary">Import Products</button>
+                    <input type="file" id="importFile" accept=".json" style="display:none;" onchange="importProducts(event)">
+                    <button onclick="clearAllProducts()" class="btn btn-danger">Clear All Products</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TIMELESS SCENT</h3>
+                    <p>Luxury fragrances for the discerning taste</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Timeless Scent. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/admin.js"></script>
+    <script>
+        loadProductsList();
+    </script>
+</body>
+</html>

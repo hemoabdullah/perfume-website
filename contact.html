@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Timeless Scent</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">✧ TIMELESS SCENT ✧</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="admin.html" class="nav-link nav-admin">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Get in Touch</h1>
+        <p>We'd love to hear from you</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Connect With Us</h2>
+                    <p>Have questions about our fragrances? Want to place an order? We're here to help!</p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <h3>📧 Email</h3>
+                            <p>Send us an email and we'll respond within 24 hours.</p>
+                            <a href="mailto:hello@timelessscent.com" class="contact-link">hello@timelessscent.com</a>
+                        </div>
+
+                        <div class="contact-method">
+                            <h3>💬 WhatsApp</h3>
+                            <p>Chat with us on WhatsApp for quick inquiries and orders.</p>
+                            <a href="https://wa.me/1234567890?text=Hi%20Timeless%20Scent%21%20I'm%20interested%20in%20your%20perfumes" target="_blank" class="contact-link">Message on WhatsApp</a>
+                        </div>
+
+                        <div class="contact-method">
+                            <h3>📱 Instagram</h3>
+                            <p>Follow us for updates, new releases, and exclusive content.</p>
+                            <a href="https://instagram.com/timelessscent" target="_blank" class="contact-link">@timelessscent</a>
+                        </div>
+
+                        <div class="contact-method">
+                            <h3>🎵 TikTok</h3>
+                            <p>Watch our perfume reviews, unboxings, and behind-the-scenes content.</p>
+                            <a href="https://tiktok.com/@timelessscent" target="_blank" class="contact-link">@timelessscent</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2>Send us a Message</h2>
+                    <form id="contactForm" onsubmit="handleContactForm(event)">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                    <div id="formMessage"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TIMELESS SCENT</h3>
+                    <p>Luxury fragrances for the discerning taste</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="admin.html">Admin</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" class="social-icon">Instagram</a>
+                        <a href="https://tiktok.com" target="_blank" class="social-icon">TikTok</a>
+                        <a href="https://wa.me/" target="_blank" class="social-icon">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Timeless Scent. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function handleContactForm(event) {
+            event.preventDefault();
+            const messageDiv = document.getElementById('formMessage');
+            messageDiv.textContent = 'Thank you! We\'ll get back to you soon.';
+            messageDiv.style.color = '#D4AF37';
+            document.getElementById('contactForm').reset();
+            setTimeout(() => {
+                messageDiv.textContent = '';
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
