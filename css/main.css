@@ -188,11 +188,11 @@ body::after {
 }
 
 .logo-icon {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
-    opacity: 0.95;
-    filter: brightness(1.2);
+    opacity: 1;
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
 }
 
 .hero-title {
@@ -1041,8 +1041,8 @@ body::after {
     }
 
     .logo-icon {
-        width: 70px;
-        height: 70px;
+        width: 80px;
+        height: 80px;
     }
 
     .hero-title {
@@ -1144,6 +1144,11 @@ body::after {
     .nav-menu {
         gap: 8px;
         font-size: 10px;
+    }
+
+    .logo-icon {
+        width: 60px;
+        height: 60px;
     }
 
     .hero-title {
