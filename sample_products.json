@@ -1,0 +1,13 @@
+[
+  {
+    "id": "perfume_sample_aeon",
+    "name": "AEON",
+    "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Cdefs%3E%3ClinearGradient id='grad'%3E%3Cstop offset='0%25' style='stop-color:%23C4A070;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23F5E6D3;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='300' height='400' fill='url(%23grad)'/%3E%3Crect x='80' y='80' width='140' height='200' fill='%23D4AF37' opacity='0.3'/%3E%3Crect x='85' y='85' width='130' height='190' fill='%23F5E6D3'/%3E%3Crect x='90' y='90' width='120' height='30' fill='%23C4A070'/%3E%3Ctext x='150' y='220' font-family='serif' font-size='32' fill='%23D4AF37' text-anchor='middle' font-weight='bold'%3EAEON%3C/text%3E%3C/svg%3E",
+    "scent_character": "Creamy • Tobacco • Warm • Addictive",
+    "top_notes": ["Vanilla Cream", "Soft Sweet Accord"],
+    "heart_notes": ["Tobacco Leaf", "Tonka Bean", "Cashmere Wood"],
+    "base_notes": ["Madagascar Vanilla", "Amber", "White Musk"],
+    "description": "AEON is a masterpiece of modern perfumery, blending creamy vanilla with sophisticated tobacco notes. A scent that transcends time, creating an intimate and warm embrace with every application.",
+    "story": "Inspired by the concept of eternity, AEON represents a timeless moment captured in fragrance. Each note has been carefully selected to create a sensory journey that evolves throughout the day, telling a story of elegance and sophistication."
+  }
+]
