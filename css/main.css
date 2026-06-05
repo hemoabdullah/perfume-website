@@ -662,6 +662,8 @@ body::after {
     justify-content: space-between;
     align-items: center;
     min-height: 150px;
+    border-radius: 4px;
+    transition: var(--transition);
 }
 
 .order-option h4 {
@@ -669,8 +671,6 @@ body::after {
     font-family: 'Playfair Display', serif;
     font-size: 20px;
     margin-bottom: 16px;
-    border-radius: 4px;
-    transition: var(--transition);
 }
 
 .order-option .btn {
