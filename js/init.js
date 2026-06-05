@@ -1,7 +1,7 @@
 // Auto-load products from products-data.json into localStorage.
 // Always sync from JSON to ensure data stays up to date.
 async function initializeProducts() {
-    const STORAGE_KEY = 'timelessScentProductsV3';
+    const STORAGE_KEY = 'timelessScentProductsV4';
 
     try {
         const response = await fetch('./products-data.json?v=' + Date.now());
