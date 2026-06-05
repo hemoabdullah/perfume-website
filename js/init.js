@@ -1,20 +1,19 @@
-// Auto-load products from products-data.json into localStorage on first visit.
+// Auto-load products from products-data.json into localStorage.
+// Always sync from JSON to ensure data stays up to date.
 async function initializeProducts() {
     const STORAGE_KEY = 'timelessScentProductsV3';
-    const existingProducts = localStorage.getItem(STORAGE_KEY);
 
-    if (!existingProducts) {
-        try {
-            const response = await fetch('./products-data.json');
-            if (response.ok) {
-                const products = await response.json();
+    try {
+        const response = await fetch('./products-data.json?v=' + Date.now());
+        if (response.ok) {
+            const products = await response.json();
+            if (products && products.length > 0) {
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
-                console.log('Products loaded automatically.');
                 refreshProductViews();
             }
-        } catch (error) {
-            console.log('Products data not found, will load from admin panel.');
         }
+    } catch (error) {
+        console.log('Products data not found, using localStorage fallback.');
     }
 }
 

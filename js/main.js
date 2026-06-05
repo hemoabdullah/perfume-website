@@ -30,10 +30,13 @@ function loadFeaturedProducts() {
     const featured = products.filter(p => featuredIds.includes(p.id));
     featuredGrid.innerHTML = '';
 
-    featured.forEach(product => {
-        const card = createProductCard(product);
+    featured.forEach((product, index) => {
+        const card = createProductCard(product, index);
         featuredGrid.appendChild(card);
     });
+
+    // Trigger scroll animations
+    observeElements();
 }
 
 // Load all products on products page
@@ -50,26 +53,35 @@ function loadAllProducts() {
     emptyState.style.display = 'none';
     productsGrid.innerHTML = '';
 
-    products.forEach(product => {
-        const card = createProductCard(product);
+    products.forEach((product, index) => {
+        const card = createProductCard(product, index);
         productsGrid.appendChild(card);
     });
+
+    // Trigger scroll animations
+    observeElements();
 }
 
 // Create product card element
-function createProductCard(product) {
+function createProductCard(product, index = 0) {
     const card = document.createElement('div');
-    card.className = 'product-card';
+    card.className = 'product-card reveal';
+    card.style.animationDelay = `${index * 0.1}s`;
     card.innerHTML = `
         <div class="product-image">
-            <img src="${product.image}" alt="${product.name}">
+            <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.style.display='none'">
         </div>
         <div class="product-info">
             <h3 class="product-name">${product.name}</h3>
             <p class="product-character">${product.scent_character || 'Fragrance profile coming soon'}</p>
-            <button onclick="viewProductDetails('${product.id}')" class="btn btn-primary">View Details</button>
+            <a href="product.html?id=${product.id}" class="btn btn-primary">View Details</a>
         </div>
     `;
+    card.addEventListener('click', (e) => {
+        if (e.target.tagName !== 'A') {
+            window.location.href = `product.html?id=${product.id}`;
+        }
+    });
     return card;
 }
 
@@ -101,65 +113,69 @@ function loadProductDetail() {
     const baseNotes = product.base_notes && product.base_notes.length ? product.base_notes : ['Coming soon'];
     const whatsappLink = `${WHATSAPP_URL}?text=${encodeURIComponent(`Hi Timeless Scent! I'm interested in ${product.name}`)}`;
 
+    document.title = `${product.name} — Timeless Scent`;
+
     const detailHTML = `
-        <div class="product-container">
-            <div class="product-hero">
-                <img src="${product.image}" alt="${product.name}">
-            </div>
-            <div class="product-details">
-                <h1 class="product-detail-title">${product.name}</h1>
-                <p class="product-detail-character">${product.scent_character || 'Fragrance profile coming soon'}</p>
+        <div class="product-hero reveal">
+            <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.src='img/placeholder.png'">
+        </div>
 
-                <div class="fragrance-notes">
-                    <div class="notes-category">
+        <div class="product-details">
+            <h1 class="product-detail-title reveal">${product.name}</h1>
+            <p class="product-detail-character reveal">${product.scent_character || ''}</p>
+
+            <div class="fragrance-notes reveal">
+                <div class="notes-category">
+                    <div class="notes-label">
                         <h4>Top Notes</h4>
-                        <div class="notes-list">
-                            ${topNotes.map(note => `<span class="note-tag">${note}</span>`).join('')}
-                        </div>
                     </div>
-                    <div class="notes-category">
+                    <div class="notes-list">
+                        ${topNotes.map(note => `<span class="note-tag">${note}</span>`).join('')}
+                    </div>
+                </div>
+                <div class="notes-category">
+                    <div class="notes-label">
                         <h4>Heart Notes</h4>
-                        <div class="notes-list">
-                            ${heartNotes.map(note => `<span class="note-tag">${note}</span>`).join('')}
-                        </div>
                     </div>
-                    <div class="notes-category">
+                    <div class="notes-list">
+                        ${heartNotes.map(note => `<span class="note-tag">${note}</span>`).join('')}
+                    </div>
+                </div>
+                <div class="notes-category">
+                    <div class="notes-label">
                         <h4>Base Notes</h4>
-                        <div class="notes-list">
-                            ${baseNotes.map(note => `<span class="note-tag">${note}</span>`).join('')}
-                        </div>
+                    </div>
+                    <div class="notes-list">
+                        ${baseNotes.map(note => `<span class="note-tag">${note}</span>`).join('')}
                     </div>
                 </div>
+            </div>
 
-                ${product.description ? `
-                <div class="product-section">
-                    <h3>About This Fragrance</h3>
-                    <p>${product.description}</p>
-                </div>
-                ` : ''}
+            ${product.description ? `
+            <div class="product-section reveal">
+                <h3>Why You'll Love It</h3>
+                <p>${product.description}</p>
+            </div>
+            ` : ''}
 
-                ${product.story ? `
-                <div class="product-section">
-                    <h3>The Story</h3>
-                    <p>${product.story}</p>
-                </div>
-                ` : ''}
+            ${product.story ? `
+            <div class="product-section reveal">
+                <h3>The Story</h3>
+                <p>${product.story}</p>
+            </div>
+            ` : ''}
 
-                <div class="product-section">
-                    <h3>Why You'll Love It</h3>
-                    <p>Each fragrance in our collection is crafted with the finest ingredients, blended to perfection by master perfumers. Experience luxury with every spray.</p>
-                </div>
-
-                <div class="product-section">
-                    <div class="order-options">
-                        <div class="order-option">
-                            <h4>Order now?</h4>
-                            <a href="${SHOPEE_URL}" target="_blank" class="btn btn-primary">Shopee</a>
-                        </div>
-                        <div class="order-option">
-                            <h4>Special Price?</h4>
-                            <a href="${whatsappLink}" target="_blank" class="btn btn-secondary">Whatsapp</a>
-                        </div>
+            <div class="order-section reveal">
+                <div class="order-options">
+                    <div class="order-option">
+                        <h4>Order on Shopee</h4>
+                        <p>Shop our full collection</p>
+                        <a href="${SHOPEE_URL}" target="_blank" class="btn btn-primary">Shop Now</a>
+                    </div>
+                    <div class="order-option">
+                        <h4>WhatsApp Us</h4>
+                        <p>Get a special price</p>
+                        <a href="${whatsappLink}" target="_blank" class="btn btn-secondary">Message Us</a>
                     </div>
                 </div>
             </div>
@@ -167,6 +183,9 @@ function loadProductDetail() {
     `;
 
     document.getElementById('productContainer').innerHTML = detailHTML;
+
+    // Trigger animations
+    observeElements();
 }
 
 // Load related products
@@ -185,10 +204,12 @@ function loadRelatedProducts() {
     }
 
     relatedGrid.innerHTML = '';
-    related.forEach(product => {
-        const card = createProductCard(product);
+    related.forEach((product, index) => {
+        const card = createProductCard(product, index);
         relatedGrid.appendChild(card);
     });
+
+    observeElements();
 }
 
 // Generate unique ID
@@ -206,5 +227,34 @@ function imageToBase64(file) {
     });
 }
 
+// ============================================
+// SCROLL REVEAL ANIMATIONS
+// ============================================
 
+function observeElements() {
+    const reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
 
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    reveals.forEach(el => observer.observe(el));
+}
+
+// Run on page load for static elements
+document.addEventListener('DOMContentLoaded', () => {
+    // Add reveal class to static elements
+    document.querySelectorAll('.feature, .contact-method, .section-title, .brand-text, .hero-content, .cta-section').forEach(el => {
+        el.classList.add('reveal');
+    });
+    observeElements();
+});
