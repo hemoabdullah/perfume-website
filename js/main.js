@@ -69,7 +69,7 @@ function createProductCard(product, index = 0) {
     card.style.animationDelay = `${index * 0.1}s`;
     card.innerHTML = `
         <div class="product-image">
-            <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.style.display='none'">
+            <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.src='img/placeholder.png'; console.error('Failed to load image:', '${product.image}')">
         </div>
         <div class="product-info">
             <h3 class="product-name">${product.name}</h3>
