@@ -143,11 +143,15 @@ function loadProductDetail() {
                 </div>
 
                 <div class="product-section">
-                    <h3>Order Now</h3>
-                    <p>Ready to experience this luxurious scent? Reach out to us through any of our contact channels.</p>
-                    <div class="order-buttons">
-                        <a href="https://shopee.co.id/timelessscent__" target="_blank" class="btn btn-primary">Shop on Shopee</a>
-                        <a href="https://wa.me/62088805204080?text=Hi%20Timeless%20Scent%21%20I%27m%20interested%20in%20${encodeURIComponent(product.name)}" target="_blank" class="btn btn-secondary">Message WhatsApp</a>
+                    <div class="order-options">
+                        <div class="order-option">
+                            <h4>Order Online?</h4>
+                            <a href="https://shopee.co.id/timelessscent__" target="_blank" class="btn btn-primary">Shop on Shopee</a>
+                        </div>
+                        <div class="order-option">
+                            <h4>Special Price?</h4>
+                            <a href="https://wa.me/62877-1648-3269?text=Hi%20Timeless%20Scent%21%20I%27m%20interested%20in%20${encodeURIComponent(product.name)}" target="_blank" class="btn btn-secondary">Message WhatsApp</a>
+                        </div>
                     </div>
                 </div>
             </div>
