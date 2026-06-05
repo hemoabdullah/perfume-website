@@ -2,7 +2,7 @@
 // ADMIN PANEL JAVASCRIPT
 // ============================================
 
-const STORAGE_KEY = 'timelessScentProductsV2';
+const STORAGE_KEY = 'timelessScentProductsV3';
 
 // Get products from localStorage
 function getProducts() {

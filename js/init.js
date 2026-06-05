@@ -1,6 +1,6 @@
 // Auto-load products from products-data.json into localStorage on first visit.
 async function initializeProducts() {
-    const STORAGE_KEY = 'timelessScentProductsV2';
+    const STORAGE_KEY = 'timelessScentProductsV3';
     const existingProducts = localStorage.getItem(STORAGE_KEY);
 
     if (!existingProducts) {

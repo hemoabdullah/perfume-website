@@ -151,7 +151,7 @@ body::after {
     align-items: center;
     justify-content: center;
     background:
-        linear-gradient(90deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.56) 50%, rgba(0, 0, 0, 0.88) 100%),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.92) 100%),
         url('../img/12 parfumes/homepage.jpeg') center / cover no-repeat,
         linear-gradient(135deg, #1a1a1a 0%, #000000 50%, #2a1a0a 100%);
     overflow: hidden;
@@ -165,8 +165,8 @@ body::after {
     right: 0;
     bottom: 0;
     background:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.78) 100%),
-        radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.18), transparent 46%);
+        linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.9) 100%),
+        radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.15), transparent 46%);
     opacity: 1;
 }
 
@@ -188,27 +188,7 @@ body::after {
     animation: fadeInUp 1s ease-out;
 }
 
-.hero-logo {
-    margin: 0 auto 28px;
-    animation: floatDown 2s ease-in-out infinite;
-    width: min(220px, 46vw);
-    height: min(220px, 46vw);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(212, 175, 55, 0.45);
-    background: rgba(0, 0, 0, 0.48);
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(6px);
-}
-
-.logo-icon {
-    width: 86%;
-    height: 86%;
-    object-fit: contain;
-    opacity: 1;
-    filter: drop-shadow(0 0 22px rgba(212, 175, 55, 0.34));
-}
+/* Hero logo removed */
 
 .hero-title {
     font-family: 'Playfair Display', serif;
@@ -246,7 +226,7 @@ body::after {
    ============================================ */
 
 .btn {
-    padding: 14px 35px;
+    padding: 14px 30px;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -254,10 +234,14 @@ body::after {
     cursor: pointer;
     transition: var(--transition);
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     border-radius: 2px;
     text-transform: uppercase;
     font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
 }
 
 .btn-primary {
@@ -552,25 +536,29 @@ body::after {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    align-items: start;
+    align-items: center;
 }
 
 .product-hero {
     width: 100%;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    padding: 20px;
-    background: rgba(212, 175, 55, 0.05);
+    max-width: 480px;
+    aspect-ratio: 1 / 1;
+    border: 2px solid var(--primary-color);
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 600px;
+    margin: 0 auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
 }
 
 .product-hero img {
     width: 100%;
-    height: auto;
-    max-width: 400px;
+    height: 100%;
     object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
 }
 
 .product-details {
@@ -579,10 +567,12 @@ body::after {
 
 .product-detail-title {
     font-family: 'Playfair Display', serif;
-    font-size: 48px;
+    font-size: clamp(32px, 4.5vw, 48px);
     color: var(--primary-color);
     margin-bottom: 10px;
     letter-spacing: 2px;
+    line-height: 1.2;
+    font-weight: 900;
 }
 
 .product-detail-character {
@@ -653,8 +643,12 @@ body::after {
 .order-option {
     border: 1px solid rgba(212, 175, 55, 0.3);
     background: rgba(212, 175, 55, 0.05);
-    padding: 22px;
-    text-align: center;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 150px;
 }
 
 .order-option h4 {
@@ -665,8 +659,13 @@ body::after {
 }
 
 .order-option .btn {
+    display: flex;
     width: 100%;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 20px;
+    min-height: 48px;
+    margin-top: auto;
 }
 
 .order-buttons {

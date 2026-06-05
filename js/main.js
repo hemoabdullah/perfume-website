@@ -2,7 +2,7 @@
 // MAIN JAVASCRIPT - PERFUME WEBSITE
 // ============================================
 
-const STORAGE_KEY = 'timelessScentProductsV2';
+const STORAGE_KEY = 'timelessScentProductsV3';
 const WHATSAPP_URL = 'https://wa.me/6289682007177';
 const SHOPEE_URL = 'https://shopee.co.id/timelessscent__';
 
