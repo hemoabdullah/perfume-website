@@ -49,7 +49,22 @@ const translations = {
         whatsapp_label: "WhatsApp",
         insta_label: "Instagram",
         order_now_q: "Order now?",
-        special_price_q: "Special price?"
+        special_price_q: "Special price?",
+        back_home: "Back to Home",
+        // Scent Keywords
+        warm: "Warm",
+        oriental: "Oriental",
+        spicy: "Spicy",
+        luxurious: "Luxurious",
+        tobacco: "Tobacco",
+        rich: "Rich",
+        addictive: "Addictive",
+        fresh: "Fresh",
+        clean: "Clean",
+        modern: "Modern",
+        versatile: "Versatile",
+        sweet: "Sweet",
+        seductive: "Seductive"
     },
     id: {
         home: "Beranda",
@@ -92,7 +107,22 @@ const translations = {
         whatsapp_label: "WhatsApp",
         insta_label: "Instagram",
         order_now_q: "Pesan sekarang?",
-        special_price_q: "Harga spesial?"
+        special_price_q: "Harga spesial?",
+        back_home: "Kembali ke Beranda",
+        // Scent Keywords
+        warm: "Hangat",
+        oriental: "Oriental",
+        spicy: "Rempah",
+        luxurious: "Mewah",
+        tobacco: "Tembakau",
+        rich: "Kaya",
+        addictive: "Adiktif",
+        fresh: "Segar",
+        clean: "Bersih",
+        modern: "Modern",
+        versatile: "Serbaguna",
+        sweet: "Manis",
+        seductive: "Menggoda"
     },
     ar: {
         home: "الرئيسية",
@@ -135,7 +165,22 @@ const translations = {
         whatsapp_label: "واتساب",
         insta_label: "إنستغرام",
         order_now_q: "اطلب الآن؟",
-        special_price_q: "سعر خاص؟"
+        special_price_q: "سعر خاص؟",
+        back_home: "العودة للرئيسية",
+        // Scent Keywords
+        warm: "دافئ",
+        oriental: "شرقي",
+        spicy: "توابل",
+        luxurious: "فاخر",
+        tobacco: "تبغ",
+        rich: "غني",
+        addictive: "مثير للإدمان",
+        fresh: "منعش",
+        clean: "نظيف",
+        modern: "عصري",
+        versatile: "متعدد الاستخدامات",
+        sweet: "حلو",
+        seductive: "جذاب"
     }
 };
 
@@ -143,6 +188,15 @@ let currentLang = localStorage.getItem('ts_lang') || 'en';
 
 function t(key) {
     return translations[currentLang][key] || key;
+}
+
+// Helper to translate scent characters (e.g. "Warm • Tobacco")
+function translateScent(str) {
+    if (!str) return '';
+    return str.split(' • ').map(word => {
+        const key = word.toLowerCase().trim();
+        return t(key);
+    }).join(' • ');
 }
 
 function toggleLanguage() {
@@ -227,7 +281,7 @@ function createProductCard(product, index = 0) {
         </div>
         <div class="product-info">
             <h3 class="product-name">${product.name}</h3>
-            <p class="product-character">${product.scent_character || 'Fragrance profile coming soon'}</p>
+            <p class="product-character">${translateTag(product.scent_character)}</p>
             <a href="product.html?id=${product.id}" class="btn btn-primary">${t('view_details')}</a>
         </div>
     `;
@@ -276,7 +330,7 @@ function loadProductDetail() {
 
         <div class="product-details">
             <h1 class="product-detail-title reveal">${product.name}</h1>
-            <p class="product-detail-character reveal">${product.scent_character || ''}</p>
+            <p class="product-detail-character reveal">${translateTag(product.scent_character)}</p>
 
             <div class="fragrance-notes reveal">
                 <div class="notes-category">
@@ -284,7 +338,7 @@ function loadProductDetail() {
                         <h4>${t('notes_top')}</h4>
                     </div>
                     <div class="notes-list">
-                        ${topNotes.map(note => `<span class="note-tag">${note}</span>`).join('')}
+                        ${topNotes.map(note => `<span class="note-tag">${t(note.toLowerCase().trim())}</span>`).join('')}
                     </div>
                 </div>
                 <div class="notes-category">
@@ -292,7 +346,7 @@ function loadProductDetail() {
                         <h4>${t('notes_heart')}</h4>
                     </div>
                     <div class="notes-list">
-                        ${heartNotes.map(note => `<span class="note-tag">${note}</span>`).join('')}
+                        ${heartNotes.map(note => `<span class="note-tag">${t(note.toLowerCase().trim())}</span>`).join('')}
                     </div>
                 </div>
                 <div class="notes-category">
@@ -300,7 +354,7 @@ function loadProductDetail() {
                         <h4>${t('notes_base')}</h4>
                     </div>
                     <div class="notes-list">
-                        ${baseNotes.map(note => `<span class="note-tag">${note}</span>`).join('')}
+                        ${baseNotes.map(note => `<span class="note-tag">${t(note.toLowerCase().trim())}</span>`).join('')}
                     </div>
                 </div>
             </div>
@@ -430,6 +484,8 @@ document.addEventListener('DOMContentLoaded', () => {
         '.cta-section p': 'cta_desc',
         '.btn-large': 'view_all',
         '.footer-section p': 'footer_tagline',
+        '.back-link': 'back_home',
+        '.empty-state p': 'empty_products',
         '.footer-section:nth-child(2) h3': 'quick_links',
         '.footer-section:nth-child(3) h3': 'connect',
         '.page-header h1': 'get_in_touch', // Default for contact

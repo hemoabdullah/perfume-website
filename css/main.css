@@ -141,21 +141,22 @@ body::after {
 
 .lang-switcher {
     display: flex;
-    gap: 5px;
-    margin-left: 15px;
+    gap: 0;
+    margin-left: 10px;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .lang-btn {
-    background: transparent;
+    background: rgba(212, 175, 55, 0.1);
     border: 1px solid var(--primary-color);
     color: var(--text-color);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
     cursor: pointer;
     padding: 5px 10px;
     transition: var(--transition);
-    min-width: 45px;
+    min-width: 40px;
 }
 
 .lang-btn:hover {
@@ -1110,17 +1111,20 @@ body::after {
 
 @media (max-width: 768px) {
     .logo {
-        font-size: 14px;
+        font-size: 11px;
         letter-spacing: 1px;
+        flex-shrink: 0;
     }
 
     .nav-menu {
-        gap: 12px;
-        font-size: 11px;
+        gap: 10px;
+        font-size: 9px;
+        justify-content: center;
+        margin-left: auto;
     }
 
     .nav-container {
-        height: 60px;
+        height: 70px;
         padding: 0 10px;
     }
 
