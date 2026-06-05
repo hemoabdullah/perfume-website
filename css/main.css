@@ -146,10 +146,14 @@ body::after {
 .hero {
     position: relative;
     height: 100vh;
+    min-height: 720px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #1a1a1a 0%, #000000 50%, #2a1a0a 100%);
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.56) 50%, rgba(0, 0, 0, 0.88) 100%),
+        url('../img/12 parfumes/homepage.jpeg') center / cover no-repeat,
+        linear-gradient(135deg, #1a1a1a 0%, #000000 50%, #2a1a0a 100%);
     overflow: hidden;
 }
 
@@ -160,8 +164,10 @@ body::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="dots" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="2" fill="%23D4AF37" opacity="0.1"/></pattern></defs><rect width="1200" height="800" fill="url(%23dots)"/></svg>');
-    opacity: 0.5;
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.78) 100%),
+        radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.18), transparent 46%);
+    opacity: 1;
 }
 
 .hero-overlay {
@@ -183,16 +189,25 @@ body::after {
 }
 
 .hero-logo {
-    margin-bottom: 30px;
+    margin: 0 auto 28px;
     animation: floatDown 2s ease-in-out infinite;
+    width: min(220px, 46vw);
+    height: min(220px, 46vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    background: rgba(0, 0, 0, 0.48);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
 }
 
 .logo-icon {
-    width: 120px;
-    height: 120px;
+    width: 86%;
+    height: 86%;
     object-fit: contain;
     opacity: 1;
-    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
+    filter: drop-shadow(0 0 22px rgba(212, 175, 55, 0.34));
 }
 
 .hero-title {
@@ -629,6 +644,31 @@ body::after {
     line-height: 1.8;
 }
 
+.order-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.order-option {
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: rgba(212, 175, 55, 0.05);
+    padding: 22px;
+    text-align: center;
+}
+
+.order-option h4 {
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.order-option .btn {
+    width: 100%;
+    text-align: center;
+}
+
 .order-buttons {
     display: flex;
     gap: 15px;
@@ -675,9 +715,8 @@ body::after {
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    max-width: 860px;
+    margin: 0 auto;
 }
 
 .contact-info h2,
@@ -737,6 +776,12 @@ body::after {
 
 .contact-link:hover {
     text-decoration: underline;
+}
+
+.order-contact-method .btn {
+    margin-top: 8px;
+    min-width: 180px;
+    text-align: center;
 }
 
 .form-group {
@@ -1041,8 +1086,12 @@ body::after {
     }
 
     .logo-icon {
-        width: 80px;
-        height: 80px;
+        width: 86%;
+        height: 86%;
+    }
+
+    .hero {
+        min-height: 680px;
     }
 
     .hero-title {
@@ -1091,6 +1140,10 @@ body::after {
     }
 
     .contact-content {
+        max-width: 100%;
+    }
+
+    .order-options {
         grid-template-columns: 1fr;
     }
 
@@ -1147,8 +1200,8 @@ body::after {
     }
 
     .logo-icon {
-        width: 60px;
-        height: 60px;
+        width: 86%;
+        height: 86%;
     }
 
     .hero-title {

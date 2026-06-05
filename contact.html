@@ -8,10 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">✧ TIMELESS SCENT ✧</a>
+            <a href="index.html" class="logo">TIMELESS SCENT</a>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="products.html" class="nav-link">Products</a></li>
@@ -20,13 +19,11 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
     <section class="page-header">
         <h1>Get in Touch</h1>
         <p>We'd love to hear from you</p>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact-section">
         <div class="container">
             <div class="contact-content">
@@ -36,27 +33,33 @@
 
                     <div class="contact-methods">
                         <div class="contact-method">
-                            <h3>✉ Email</h3>
+                            <h3>Email</h3>
                             <p>Send us an email and we'll respond within 24 hours.</p>
                             <a href="mailto:hamamxklb@gmail.com" class="contact-link">hamamxklb@gmail.com</a>
                         </div>
 
                         <div class="contact-method">
-                            <h3>◈ WhatsApp</h3>
+                            <h3>WhatsApp</h3>
                             <p>Chat with us on WhatsApp for quick inquiries and orders.</p>
-                            <a href="https://wa.me/62877-1648-3269?text=Hi%20Timeless%20Scent%21%20I'm%20interested%20in%20your%20perfumes" target="_blank" class="contact-link">Message on WhatsApp: +62 877-1648-3269</a>
+                            <a href="https://wa.me/6289682007177?text=Hi%20Timeless%20Scent%21%20I'm%20interested%20in%20your%20perfumes" target="_blank" class="contact-link">Message on WhatsApp: +62 877-1648-3269</a>
                         </div>
 
                         <div class="contact-method">
-                            <h3>◈ Instagram</h3>
+                            <h3>Instagram</h3>
                             <p>Follow us for updates, new releases, and exclusive content.</p>
                             <a href="https://www.instagram.com/timelessscent__/" target="_blank" class="contact-link">@timelessscent__</a>
                         </div>
 
-                        <div class="contact-method">
-                            <h3>◈ Order Now</h3>
+                        <div class="contact-method order-contact-method">
+                            <h3>Order now?</h3>
                             <p>Shop directly on Shopee for all your favorite perfumes.</p>
-                            <a href="https://shopee.co.id/timelessscent__" target="_blank" class="contact-link">Visit Shopee Store</a>
+                            <a href="https://shopee.co.id/timelessscent__" target="_blank" class="btn btn-primary">Shopee</a>
+                        </div>
+
+                        <div class="contact-method order-contact-method">
+                            <h3>Special price?</h3>
+                            <p>Chat with us on WhatsApp for special pricing and quick help.</p>
+                            <a href="https://wa.me/6289682007177" target="_blank" class="btn btn-secondary">Whatsapp</a>
                         </div>
                     </div>
                 </div>
@@ -64,7 +67,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -85,7 +87,7 @@
                     <div class="social-links">
                         <a href="https://instagram.com/timelessscent___" target="_blank" class="social-icon">Instagram</a>
                         <a href="https://shopee.co.id/timelessscent__" target="_blank" class="social-icon">Shop</a>
-                        <a href="https://wa.me/62877-1648-3269" target="_blank" class="social-icon">WhatsApp</a>
+                        <a href="https://wa.me/6289682007177" target="_blank" class="social-icon">WhatsApp</a>
                     </div>
                 </div>
             </div>
@@ -94,18 +96,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        function handleContactForm(event) {
-            event.preventDefault();
-            const messageDiv = document.getElementById('formMessage');
-            messageDiv.textContent = 'Thank you! We\'ll get back to you soon.';
-            messageDiv.style.color = '#D4AF37';
-            document.getElementById('contactForm').reset();
-            setTimeout(() => {
-                messageDiv.textContent = '';
-            }, 5000);
-        }
-    </script>
 </body>
 </html>

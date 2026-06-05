@@ -2,7 +2,9 @@
 // MAIN JAVASCRIPT - PERFUME WEBSITE
 // ============================================
 
-const STORAGE_KEY = 'perfectscentProducts';
+const STORAGE_KEY = 'timelessScentProductsV2';
+const WHATSAPP_URL = 'https://wa.me/6289682007177';
+const SHOPEE_URL = 'https://shopee.co.id/timelessscent__';
 
 // Get products from localStorage
 function getProducts() {
@@ -63,7 +65,7 @@ function createProductCard(product) {
         </div>
         <div class="product-info">
             <h3 class="product-name">${product.name}</h3>
-            <p class="product-character">${product.scent_character}</p>
+            <p class="product-character">${product.scent_character || 'Fragrance profile coming soon'}</p>
             <button onclick="viewProductDetails('${product.id}')" class="btn btn-primary">View Details</button>
         </div>
     `;
@@ -93,6 +95,11 @@ function loadProductDetail() {
         return;
     }
 
+    const topNotes = product.top_notes && product.top_notes.length ? product.top_notes : ['Coming soon'];
+    const heartNotes = product.heart_notes && product.heart_notes.length ? product.heart_notes : ['Coming soon'];
+    const baseNotes = product.base_notes && product.base_notes.length ? product.base_notes : ['Coming soon'];
+    const whatsappLink = `${WHATSAPP_URL}?text=${encodeURIComponent(`Hi Timeless Scent! I'm interested in ${product.name}`)}`;
+
     const detailHTML = `
         <div class="product-container">
             <div class="product-hero">
@@ -100,25 +107,25 @@ function loadProductDetail() {
             </div>
             <div class="product-details">
                 <h1 class="product-detail-title">${product.name}</h1>
-                <p class="product-detail-character">${product.scent_character}</p>
+                <p class="product-detail-character">${product.scent_character || 'Fragrance profile coming soon'}</p>
 
                 <div class="fragrance-notes">
                     <div class="notes-category">
                         <h4>Top Notes</h4>
                         <div class="notes-list">
-                            ${product.top_notes.map(note => `<span class="note-tag">${note}</span>`).join('')}
+                            ${topNotes.map(note => `<span class="note-tag">${note}</span>`).join('')}
                         </div>
                     </div>
                     <div class="notes-category">
                         <h4>Heart Notes</h4>
                         <div class="notes-list">
-                            ${product.heart_notes.map(note => `<span class="note-tag">${note}</span>`).join('')}
+                            ${heartNotes.map(note => `<span class="note-tag">${note}</span>`).join('')}
                         </div>
                     </div>
                     <div class="notes-category">
                         <h4>Base Notes</h4>
                         <div class="notes-list">
-                            ${product.base_notes.map(note => `<span class="note-tag">${note}</span>`).join('')}
+                            ${baseNotes.map(note => `<span class="note-tag">${note}</span>`).join('')}
                         </div>
                     </div>
                 </div>
@@ -145,12 +152,12 @@ function loadProductDetail() {
                 <div class="product-section">
                     <div class="order-options">
                         <div class="order-option">
-                            <h4>Order Online?</h4>
-                            <a href="https://shopee.co.id/timelessscent__" target="_blank" class="btn btn-primary">Shop on Shopee</a>
+                            <h4>Order now?</h4>
+                            <a href="${SHOPEE_URL}" target="_blank" class="btn btn-primary">Shopee</a>
                         </div>
                         <div class="order-option">
                             <h4>Special Price?</h4>
-                            <a href="https://wa.me/62877-1648-3269?text=Hi%20Timeless%20Scent%21%20I%27m%20interested%20in%20${encodeURIComponent(product.name)}" target="_blank" class="btn btn-secondary">Message WhatsApp</a>
+                            <a href="${whatsappLink}" target="_blank" class="btn btn-secondary">Whatsapp</a>
                         </div>
                     </div>
                 </div>
