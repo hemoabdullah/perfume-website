@@ -69,7 +69,7 @@ function createProductCard(product, index = 0) {
     card.style.animationDelay = `${index * 0.1}s`;
     card.innerHTML = `
         <div class="product-image">
-            <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.src='img/placeholder.png'; console.error('Failed to load image:', '${product.image}')">
+            <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="console.error('Image not found:', this.src); this.src='img/placeholder.png'; this.onerror=null;">
         </div>
         <div class="product-info">
             <h3 class="product-name">${product.name}</h3>
@@ -117,7 +117,7 @@ function loadProductDetail() {
 
     const detailHTML = `
         <div class="product-hero reveal">
-            <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.src='img/placeholder.png'">
+            <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="console.error('Detail image missing:', this.src); this.src='img/placeholder.png'; this.onerror=null;">
         </div>
 
         <div class="product-details">
