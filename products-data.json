@@ -47,7 +47,7 @@
   {
     "id": "perfume_y_vision",
     "name": "Y Vision",
-    "image": "img/12 parfumes/y vision.png",
+    "image": "img/12 parfumes/y vision.PNG",
     "scent_character": "Fresh • Clean • Modern • Versatile",
     "top_notes": [
       "Bergamot",
@@ -235,7 +235,7 @@
   {
     "id": "perfume_opium_night",
     "name": "Opium Night",
-    "image": "img/12 parfumes/opium night.png",
+    "image": "img/12 parfumes/opium night.PNG",
     "scent_character": "Coffee • Vanilla • Sweet • Seductive",
     "top_notes": [
       "Pear",
