@@ -6,6 +6,71 @@ const STORAGE_KEY = 'timelessScentProductsV4';
 const WHATSAPP_URL = 'https://wa.me/6289682007177';
 const SHOPEE_URL = 'https://shopee.co.id/timelessscent__';
 
+// Translation Dictionary
+const translations = {
+    en: {
+        home: "Home",
+        products: "Products",
+        contact: "Contact",
+        featured: "Featured Collection",
+        view_details: "View Details",
+        order_shopee: "Order on Shopee",
+        shop_now: "Shop Now",
+        special_price: "Get a special price",
+        message_us: "Message Us",
+        why_love: "Why You'll Love It",
+        story: "The Story",
+        notes_top: "Top Notes",
+        notes_heart: "Heart Notes",
+        notes_base: "Base Notes"
+    },
+    id: {
+        home: "Beranda",
+        products: "Produk",
+        contact: "Kontak",
+        featured: "Koleksi Unggulan",
+        view_details: "Lihat Detail",
+        order_shopee: "Pesan di Shopee",
+        shop_now: "Beli Sekarang",
+        special_price: "Dapatkan Harga Spesial",
+        message_us: "Hubungi Kami",
+        why_love: "Mengapa Anda Akan Menyukainya",
+        story: "Cerita",
+        notes_top: "Aroma Pembuka",
+        notes_heart: "Aroma Inti",
+        notes_base: "Aroma Dasar"
+    },
+    ar: {
+        home: "الرئيسية",
+        products: "المنتجات",
+        contact: "اتصل بنا",
+        featured: "مجموعة مختارة",
+        view_details: "عرض التفاصيل",
+        order_shopee: "اطلب من شوبي",
+        shop_now: "تسوق الآن",
+        special_price: "احصل على سعر خاص",
+        message_us: "تواصل معنا",
+        why_love: "لماذا ستحبه",
+        story: "القصة",
+        notes_top: "قمة العطر",
+        notes_heart: "قلب العطر",
+        notes_base: "قاعدة العطر"
+    }
+};
+
+let currentLang = localStorage.getItem('ts_lang') || 'en';
+
+function t(key) {
+    return translations[currentLang][key] || key;
+}
+
+function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('ts_lang', lang);
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    location.reload();
+}
+
 // Get products from localStorage
 function getProducts() {
     const products = localStorage.getItem(STORAGE_KEY);
@@ -69,12 +134,12 @@ function createProductCard(product, index = 0) {
     card.style.animationDelay = `${index * 0.1}s`;
     card.innerHTML = `
         <div class="product-image">
-            <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="console.error('Image not found:', this.src); this.src='img/placeholder.png'; this.onerror=null;">
+            <img src="${encodeURI(product.image)}" alt="${product.name}" loading="lazy" onerror="console.error('Image not found:', this.src); this.src='img/placeholder.png'; this.onerror=null;">
         </div>
         <div class="product-info">
             <h3 class="product-name">${product.name}</h3>
             <p class="product-character">${product.scent_character || 'Fragrance profile coming soon'}</p>
-            <a href="product.html?id=${product.id}" class="btn btn-primary">View Details</a>
+            <a href="product.html?id=${product.id}" class="btn btn-primary">${t('view_details')}</a>
         </div>
     `;
     card.addEventListener('click', (e) => {
@@ -153,14 +218,14 @@ function loadProductDetail() {
 
             ${product.description ? `
             <div class="product-section reveal">
-                <h3>Why You'll Love It</h3>
+                <h3>${t('why_love')}</h3>
                 <p>${product.description}</p>
             </div>
             ` : ''}
 
             ${product.story ? `
             <div class="product-section reveal">
-                <h3>The Story</h3>
+                <h3>${t('story')}</h3>
                 <p>${product.story}</p>
             </div>
             ` : ''}
@@ -168,14 +233,14 @@ function loadProductDetail() {
             <div class="order-section reveal">
                 <div class="order-options">
                     <div class="order-option">
-                        <h4>Order on Shopee</h4>
-                        <p>Shop our full collection</p>
-                        <a href="${SHOPEE_URL}" target="_blank" class="btn btn-primary">Shop Now</a>
+                        <h4>${t('order_shopee')}</h4>
+                        <a href="${SHOPEE_URL}" target="_blank" class="btn btn-primary">${t('shop_now')}</a>
                     </div>
                     <div class="order-option">
-                        <h4>WhatsApp Us</h4>
-                        <p>Get a special price</p>
-                        <a href="${whatsappLink}" target="_blank" class="btn btn-secondary">Message Us</a>
+                        <h4>${t('special_price')}</h4>
+                        <a href="${whatsappLink}" target="_blank" class="btn btn-secondary">
+                            <span style="margin-right: 8px;">💬</span> ${t('message_us')}
+                        </a>
                     </div>
                 </div>
             </div>
@@ -252,9 +317,26 @@ function observeElements() {
 
 // Run on page load for static elements
 document.addEventListener('DOMContentLoaded', () => {
+    // Apply direction for RTL
+    document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
     // Add reveal class to static elements
     document.querySelectorAll('.feature, .contact-method, .section-title, .brand-text, .hero-content, .cta-section').forEach(el => {
         el.classList.add('reveal');
     });
+
+    // Translate Static Navbar/Footer
+    const navLinks = document.querySelectorAll('.nav-link');
+    if (navLinks.length >= 3) {
+        navLinks[0].textContent = t('home');
+        navLinks[1].textContent = t('products');
+        navLinks[2].textContent = t('contact');
+    }
+
+    const sectionTitles = document.querySelectorAll('.section-title');
+    sectionTitles.forEach(title => {
+        if (title.textContent.includes("Featured")) title.textContent = t('featured');
+    });
+
     observeElements();
 });

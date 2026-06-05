@@ -139,6 +139,27 @@ body::after {
     color: var(--primary-color);
 }
 
+.lang-switcher {
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: var(--text-color);
+    font-size: 10px;
+    cursor: pointer;
+    padding: 2px 6px;
+    transition: var(--transition);
+}
+
+.lang-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
 /* ============================================
    HERO SECTION
    ============================================ */
