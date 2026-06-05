@@ -25,8 +25,9 @@ function loadFeaturedProducts() {
 
     if (emptyState) emptyState.style.display = 'none';
 
-    // Display first 3 products as featured
-    const featured = products.slice(0, 3);
+    // Show specific featured perfumes: AEON, Qessah, Scandal
+    const featuredIds = ['perfume_aeon', 'perfume_qeessah', 'perfume_scanda'];
+    const featured = products.filter(p => featuredIds.includes(p.id));
     featuredGrid.innerHTML = '';
 
     featured.forEach(product => {
@@ -203,4 +204,81 @@ function imageToBase64(file) {
         reader.onerror = reject;
         reader.readAsDataURL(file);
     });
+}
+
+.logo {
+    /* existing styles */
+}
+.logo:hover {
+    /* existing styles */
+}
+/* Hero logo removed */
+
+/* Premium Divider */
+.premium-divider {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    position: relative;
+    text-align: center;
+    margin: 30px 0;
+    letter-spacing: 2px;
+}
+.premium-divider::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    opacity: 0.6;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+/* Product Card – wider frame and glass‑morphism */
+.product-card {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    transition: var(--transition);
+    backdrop-filter: blur(8px);
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+.product-image img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+/* Buttons – wider */
+.btn {
+    min-width: 150px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+}
+
+/* Product Detail – centered large image */
+.product-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.product-hero img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
