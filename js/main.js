@@ -14,6 +14,8 @@ const translations = {
         contact: "Contact",
         featured: "Featured Collection",
         view_details: "View Details",
+        our_collection: "Our Collection",
+        discover_curated: "Discover our curated selection of luxury fragrances",
         order_shopee: "Order on Shopee",
         shop_now: "Shop Now",
         special_price: "Get a special price",
@@ -22,7 +24,32 @@ const translations = {
         story: "The Story",
         notes_top: "Top Notes",
         notes_heart: "Heart Notes",
-        notes_base: "Base Notes"
+        notes_base: "Base Notes",
+        hero_subtitle: "Where Luxury Meets Fragrance",
+        hero_desc: "Discover the art of fine perfumery. Each scent tells a story of elegance, sophistication, and timeless beauty.",
+        explore: "Explore Products",
+        get_touch: "Get in Touch",
+        our_craft: "Our Craft",
+        brand_text: "At Timeless Scent, we believe that fragrance is more than a scent - it's an experience, a memory, a moment frozen in time.",
+        quality: "Premium Quality",
+        quality_desc: "Sourced from the finest fragrance suppliers worldwide",
+        artisan: "Artisan Crafted",
+        artisan_desc: "Carefully blended to perfection by master perfumers",
+        luxury: "Luxury Experience",
+        luxury_desc: "Designed for those who appreciate the finer things",
+        cta_title: "Ready to Experience Luxury?",
+        cta_desc: "Browse our complete collection of premium fragrances",
+        view_all: "View All Products",
+        footer_tagline: "Luxury fragrances for the discerning taste",
+        quick_links: "Quick Links",
+        connect: "Connect With Us",
+        get_in_touch: "Get in Touch",
+        we_love_hear: "We'd love to hear from you",
+        email_label: "Email",
+        whatsapp_label: "WhatsApp",
+        insta_label: "Instagram",
+        order_now_q: "Order now?",
+        special_price_q: "Special price?"
     },
     id: {
         home: "Beranda",
@@ -30,6 +57,8 @@ const translations = {
         contact: "Kontak",
         featured: "Koleksi Unggulan",
         view_details: "Lihat Detail",
+        our_collection: "Koleksi Kami",
+        discover_curated: "Temukan pilihan wewangian mewah kami",
         order_shopee: "Pesan di Shopee",
         shop_now: "Beli Sekarang",
         special_price: "Dapatkan Harga Spesial",
@@ -38,7 +67,32 @@ const translations = {
         story: "Cerita",
         notes_top: "Aroma Pembuka",
         notes_heart: "Aroma Inti",
-        notes_base: "Aroma Dasar"
+        notes_base: "Aroma Dasar",
+        hero_subtitle: "Di mana Kemewahan Bertemu Wewangian",
+        hero_desc: "Temukan seni pembuatan parfum kelas atas. Setiap aroma menceritakan kisah keanggunan dan keindahan abadi.",
+        explore: "Jelajahi Produk",
+        get_touch: "Hubungi Kami",
+        our_craft: "Keahlian Kami",
+        brand_text: "Di Timeless Scent, kami percaya bahwa wewangian lebih dari sekadar aroma - ini adalah pengalaman dan kenangan.",
+        quality: "Kualitas Premium",
+        quality_desc: "Berasal dari pemasok wewangian terbaik di seluruh dunia",
+        artisan: "Buatan Pengrajin",
+        artisan_desc: "Dicampur dengan sempurna oleh ahli parfum terkemuka",
+        luxury: "Pengalaman Mewah",
+        luxury_desc: "Dirancang untuk mereka yang menghargai hal-hal terbaik",
+        cta_title: "Siap Merasakan Kemewahan?",
+        cta_desc: "Jelajahi koleksi lengkap wewangian premium kami",
+        view_all: "Lihat Semua Produk",
+        footer_tagline: "Wewangian mewah untuk selera yang cerdas",
+        quick_links: "Tautan Cepat",
+        connect: "Hubungi Kami",
+        get_in_touch: "Hubungi Kami",
+        we_love_hear: "Kami senang mendengar dari Anda",
+        email_label: "Email",
+        whatsapp_label: "WhatsApp",
+        insta_label: "Instagram",
+        order_now_q: "Pesan sekarang?",
+        special_price_q: "Harga spesial?"
     },
     ar: {
         home: "الرئيسية",
@@ -46,6 +100,8 @@ const translations = {
         contact: "اتصل بنا",
         featured: "مجموعة مختارة",
         view_details: "عرض التفاصيل",
+        our_collection: "مجموعتنا",
+        discover_curated: "اكتشف مجموعتنا المختارة من العطور الفاخرة",
         order_shopee: "اطلب من شوبي",
         shop_now: "تسوق الآن",
         special_price: "احصل على سعر خاص",
@@ -54,7 +110,32 @@ const translations = {
         story: "القصة",
         notes_top: "قمة العطر",
         notes_heart: "قلب العطر",
-        notes_base: "قاعدة العطر"
+        notes_base: "قاعدة العطر",
+        hero_subtitle: "حيث تلتقي الفخامة بالعطر",
+        hero_desc: "اكتشف فن العطور الراقية. كل رائحة تحكي قصة من الأناقة والرقي والجمال الخالد.",
+        explore: "استكشف المنتجات",
+        get_touch: "تواصل معنا",
+        our_craft: "حرفتنا",
+        brand_text: "في تايمليس سينت، نؤمن أن العطر أكثر من مجرد رائحة - إنه تجربة، وذكرى، ولحظة متوقفة في الزمن.",
+        quality: "جودة ممتازة",
+        quality_desc: "مستورد من أفضل موردي العطور في العالم",
+        artisan: "صناعة حرفية",
+        artisan_desc: "مزجت بعناية لتصل إلى الكمال على يد خبراء العطور",
+        luxury: "تجربة فاخرة",
+        luxury_desc: "مصمم لأولئك الذين يقدرون أرقى الأشياء",
+        cta_title: "هل أنت مستعد لتجربة الفخامة؟",
+        cta_desc: "تصفح مجموعتنا الكاملة من العطور الفاخرة",
+        view_all: "عرض جميع المنتجات",
+        footer_tagline: "عطور فاخرة للذوق الرفيع",
+        quick_links: "روابط سريعة",
+        connect: "تواصل معنا",
+        get_in_touch: "اتصل بنا",
+        we_love_hear: "يسعدنا السماع منك",
+        email_label: "البريد الإلكتروني",
+        whatsapp_label: "واتساب",
+        insta_label: "إنستغرام",
+        order_now_q: "اطلب الآن؟",
+        special_price_q: "سعر خاص؟"
     }
 };
 
@@ -64,10 +145,18 @@ function t(key) {
     return translations[currentLang][key] || key;
 }
 
+function toggleLanguage() {
+    const langs = ['en', 'id', 'ar'];
+    let nextIndex = (langs.indexOf(currentLang) + 1) % langs.length;
+    setLanguage(langs[nextIndex]);
+}
+
 function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('ts_lang', lang);
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    const btn = document.getElementById('langToggle');
+    if (btn) btn.textContent = lang.toUpperCase();
     location.reload();
 }
 
@@ -182,7 +271,7 @@ function loadProductDetail() {
 
     const detailHTML = `
         <div class="product-hero reveal">
-            <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="console.error('Detail image missing:', this.src); this.src='img/placeholder.png'; this.onerror=null;">
+            <img src="${encodeURI(product.image)}" alt="${product.name}" loading="lazy" onerror="console.error('Detail image missing:', this.src); this.src='img/placeholder.png'; this.onerror=null;">
         </div>
 
         <div class="product-details">
@@ -192,7 +281,7 @@ function loadProductDetail() {
             <div class="fragrance-notes reveal">
                 <div class="notes-category">
                     <div class="notes-label">
-                        <h4>Top Notes</h4>
+                        <h4>${t('notes_top')}</h4>
                     </div>
                     <div class="notes-list">
                         ${topNotes.map(note => `<span class="note-tag">${note}</span>`).join('')}
@@ -200,7 +289,7 @@ function loadProductDetail() {
                 </div>
                 <div class="notes-category">
                     <div class="notes-label">
-                        <h4>Heart Notes</h4>
+                        <h4>${t('notes_heart')}</h4>
                     </div>
                     <div class="notes-list">
                         ${heartNotes.map(note => `<span class="note-tag">${note}</span>`).join('')}
@@ -208,7 +297,7 @@ function loadProductDetail() {
                 </div>
                 <div class="notes-category">
                     <div class="notes-label">
-                        <h4>Base Notes</h4>
+                        <h4>${t('notes_base')}</h4>
                     </div>
                     <div class="notes-list">
                         ${baseNotes.map(note => `<span class="note-tag">${note}</span>`).join('')}
@@ -320,10 +409,51 @@ document.addEventListener('DOMContentLoaded', () => {
     // Apply direction for RTL
     document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
 
-    // Add reveal class to static elements
-    document.querySelectorAll('.feature, .contact-method, .section-title, .brand-text, .hero-content, .cta-section').forEach(el => {
-        el.classList.add('reveal');
-    });
+    const langBtn = document.getElementById('langToggle');
+    if (langBtn) langBtn.textContent = currentLang.toUpperCase();
+
+    // Translate static homepage elements
+    const translateMap = {
+        '.hero-subtitle': 'hero_subtitle',
+        '.hero-description': 'hero_desc',
+        '.hero-buttons .btn-primary': 'explore',
+        '.hero-buttons .btn-secondary': 'get_touch',
+        '.brand-intro .section-title': 'our_craft',
+        '.brand-text': 'brand_text',
+        '.feature:nth-child(1) h3': 'quality',
+        '.feature:nth-child(1) p': 'quality_desc',
+        '.feature:nth-child(2) h3': 'artisan',
+        '.feature:nth-child(2) p': 'artisan_desc',
+        '.feature:nth-child(3) h3': 'luxury',
+        '.feature:nth-child(3) p': 'luxury_desc',
+        '.cta-section h2': 'cta_title',
+        '.cta-section p': 'cta_desc',
+        '.btn-large': 'view_all',
+        '.footer-section p': 'footer_tagline',
+        '.footer-section:nth-child(2) h3': 'quick_links',
+        '.footer-section:nth-child(3) h3': 'connect',
+        '.page-header h1': 'get_in_touch', // Default for contact
+        '.page-header p': 'we_love_hear',
+        '.contact-info h2': 'connect',
+        '.contact-method:nth-child(1) h3': 'email_label',
+        '.contact-method:nth-child(2) h3': 'whatsapp_label',
+        '.contact-method:nth-child(3) h3': 'insta_label',
+        '.contact-method:nth-child(4) h3': 'order_now_q',
+        '.contact-method:nth-child(5) h3': 'special_price_q'
+    };
+
+    // Specific overrides for Products page header
+    if (window.location.pathname.includes('products.html')) {
+        const h1 = document.querySelector('.page-header h1');
+        const p = document.querySelector('.page-header p');
+        if (h1) h1.textContent = t('our_collection');
+        if (p) p.textContent = t('discover_curated');
+    }
+
+    for (const [selector, key] of Object.entries(translateMap)) {
+        const el = document.querySelector(selector);
+        if (el) el.textContent = t(key);
+    }
 
     // Translate Static Navbar/Footer
     const navLinks = document.querySelectorAll('.nav-link');
@@ -333,9 +463,11 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks[2].textContent = t('contact');
     }
 
-    const sectionTitles = document.querySelectorAll('.section-title');
-    sectionTitles.forEach(title => {
-        if (title.textContent.includes("Featured")) title.textContent = t('featured');
+    const featTitle = document.querySelector('.featured-products .section-title');
+    if (featTitle) featTitle.textContent = t('featured');
+
+    document.querySelectorAll('.feature, .contact-method, .section-title, .brand-text, .hero-content, .cta-section').forEach(el => {
+        el.classList.add('reveal');
     });
 
     observeElements();

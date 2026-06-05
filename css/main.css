@@ -141,18 +141,21 @@ body::after {
 
 .lang-switcher {
     display: flex;
-    gap: 10px;
-    margin-left: 20px;
+    gap: 5px;
+    margin-left: 15px;
+    align-items: center;
 }
 
 .lang-btn {
     background: transparent;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid var(--primary-color);
     color: var(--text-color);
-    font-size: 10px;
+    font-size: 12px;
+    font-weight: bold;
     cursor: pointer;
-    padding: 2px 6px;
+    padding: 5px 10px;
     transition: var(--transition);
+    min-width: 45px;
 }
 
 .lang-btn:hover {
