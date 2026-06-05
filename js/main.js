@@ -51,7 +51,16 @@ const translations = {
         order_now_q: "Order now?",
         special_price_q: "Special price?",
         back_home: "Back to Home",
-        // Scent Keywords
+        connect_desc: "Have questions? We're here to help!",
+        email_desc: "Send us an email and we'll respond within 24 hours.",
+        whatsapp_desc: "Chat with us on WhatsApp for quick inquiries.",
+        insta_desc: "Follow us for updates and exclusive content.",
+        shopee_desc: "Shop directly on Shopee for all perfumes.",
+        special_desc: "Chat with us for special pricing.",
+        social_insta: "Instagram",
+        social_shop: "Shop",
+        social_wa: "WhatsApp",
+        // Scent Notes & Keywords
         warm: "Warm",
         oriental: "Oriental",
         spicy: "Spicy",
@@ -64,7 +73,16 @@ const translations = {
         modern: "Modern",
         versatile: "Versatile",
         sweet: "Sweet",
-        seductive: "Seductive"
+        seductive: "Seductive",
+        honey: "Honey",
+        mint: "Mint",
+        jasmine: "Jasmine",
+        coffee: "Coffee",
+        patchouli: "Patchouli",
+        vanilla: "Vanilla",
+        saffron: "Saffron",
+        amber: "Amber",
+        woody: "Woody"
     },
     id: {
         home: "Beranda",
@@ -109,7 +127,16 @@ const translations = {
         order_now_q: "Pesan sekarang?",
         special_price_q: "Harga spesial?",
         back_home: "Kembali ke Beranda",
-        // Scent Keywords
+        connect_desc: "Ada pertanyaan? Kami di sini untuk membantu!",
+        email_desc: "Kirim email kepada kami dan kami akan membalas dalam 24 jam.",
+        whatsapp_desc: "Hubungi kami di WhatsApp untuk pertanyaan cepat.",
+        insta_desc: "Ikuti kami untuk pembaruan dan konten eksklusif.",
+        shopee_desc: "Belanja langsung di Shopee untuk semua parfum.",
+        special_desc: "Hubungi kami untuk harga spesial.",
+        social_insta: "Instagram",
+        social_shop: "Toko",
+        social_wa: "WhatsApp",
+        // Scent Notes & Keywords
         warm: "Hangat",
         oriental: "Oriental",
         spicy: "Rempah",
@@ -122,7 +149,16 @@ const translations = {
         modern: "Modern",
         versatile: "Serbaguna",
         sweet: "Manis",
-        seductive: "Menggoda"
+        seductive: "Menggoda",
+        honey: "Madu",
+        mint: "Mint",
+        jasmine: "Melati",
+        coffee: "Kopi",
+        patchouli: "Nilam",
+        vanilla: "Vanila",
+        saffron: "Safron",
+        amber: "Amber",
+        woody: "Kayu"
     },
     ar: {
         home: "الرئيسية",
@@ -167,7 +203,16 @@ const translations = {
         order_now_q: "اطلب الآن؟",
         special_price_q: "سعر خاص؟",
         back_home: "العودة للرئيسية",
-        // Scent Keywords
+        connect_desc: "هل لديك أسئلة؟ نحن هنا للمساعدة!",
+        email_desc: "أرسل لنا بريدًا إلكترونيًا وسنرد خلال 24 ساعة.",
+        whatsapp_desc: "تواصل معنا عبر واتساب للاستفسارات السريعة.",
+        insta_desc: "تابعنا للحصول على التحديثات والمحتوى الحصري.",
+        shopee_desc: "تسوق مباشرة من شوبي لجميع العطور.",
+        special_desc: "تواصل معنا للحصول على أسعار خاصة.",
+        social_insta: "إنستغرام",
+        social_shop: "المتجر",
+        social_wa: "واتساب",
+        // Scent Notes & Keywords
         warm: "دافئ",
         oriental: "شرقي",
         spicy: "توابل",
@@ -180,7 +225,16 @@ const translations = {
         modern: "عصري",
         versatile: "متعدد الاستخدامات",
         sweet: "حلو",
-        seductive: "جذاب"
+        seductive: "جذاب",
+        honey: "عسل",
+        mint: "نعناع",
+        jasmine: "ياسمين",
+        coffee: "قهوة",
+        patchouli: "باتشولي",
+        vanilla: "فانيليا",
+        saffron: "زعفران",
+        amber: "عنبر",
+        woody: "خشبي"
     }
 };
 
@@ -190,8 +244,8 @@ function t(key) {
     return translations[currentLang][key] || key;
 }
 
-// Helper to translate scent characters (e.g. "Warm • Tobacco")
-function translateScent(str) {
+// Helper to translate tags and keywords (e.g. "Warm • Tobacco")
+function translateTag(str) {
     if (!str) return '';
     return str.split(' • ').map(word => {
         const key = word.toLowerCase().trim();
@@ -491,6 +545,15 @@ document.addEventListener('DOMContentLoaded', () => {
         '.page-header h1': 'get_in_touch', // Default for contact
         '.page-header p': 'we_love_hear',
         '.contact-info h2': 'connect',
+        '.contact-info p': 'connect_desc',
+        '.contact-method:nth-child(1) p': 'email_desc',
+        '.contact-method:nth-child(2) p': 'whatsapp_desc',
+        '.contact-method:nth-child(3) p': 'insta_desc',
+        '.contact-method:nth-child(4) p': 'shopee_desc',
+        '.contact-method:nth-child(5) p': 'special_desc',
+        '.social-icon:nth-child(1)': 'social_insta',
+        '.social-icon:nth-child(2)': 'social_shop',
+        '.social-icon:nth-child(3)': 'social_wa',
         '.contact-method:nth-child(1) h3': 'email_label',
         '.contact-method:nth-child(2) h3': 'whatsapp_label',
         '.contact-method:nth-child(3) h3': 'insta_label',
