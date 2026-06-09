@@ -13,7 +13,7 @@ function getProducts() {
 // Save products to localStorage
 function saveProducts(products) {
     try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(products)); // This line was already correct in the context
     } catch (e) {
         showMessage('Storage full! Please delete some products or use smaller images.', 'error');
     }

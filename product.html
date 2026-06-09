@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details - Timeless Scent</title>
     <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -14,7 +18,7 @@
             <a href="index.html" class="logo">TIMELESS SCENT</a>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="products.html" class="nav-link active">Products</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
@@ -23,20 +27,20 @@
     <!-- Product Detail Section -->
     <section class="product-detail">
         <div class="container">
-            <a href="products.html" class="back-link">Back to Products</a>
-
-            <div class="product-container" id="productContainer">
-                <!-- Product will be loaded here by JavaScript -->
+            <a href="products.html" class="back-link">← Back to Products</a>
+            <div id="productContainer">
+                <!-- Product details will be loaded here by JavaScript -->
+                <p class="empty-state">Product not found.</p>
             </div>
         </div>
     </section>
 
-    <!-- Related Products -->
-    <section class="related-products">
+    <!-- Related Products Section -->
+    <section class="featured-products">
         <div class="container">
-            <h2 class="section-title">Explore More</h2>
+            <h2 class="section-title">You Might Also Like</h2>
             <div class="products-grid" id="relatedGrid">
-                <!-- Related products will be loaded here -->
+                <!-- Related products will be loaded here by JavaScript -->
             </div>
         </div>
     </section>
@@ -60,7 +64,8 @@
                 <div class="footer-section">
                     <h3>Connect With Us</h3>
                     <div class="social-links">
-                        <a href="https://instagram.com/timelessscent___" target="_blank" class="social-icon">Instagram</a>
+                        <a href="https://instagram.com/timelessscent___" target="_blank"
+                            class="social-icon">Instagram</a>
                         <a href="https://shopee.co.id/timelessscent__" target="_blank" class="social-icon">Shop</a>
                         <a href="https://wa.me/6289682007177" target="_blank" class="social-icon">WhatsApp</a>
                     </div>
@@ -79,4 +84,5 @@
         loadRelatedProducts();
     </script>
 </body>
+
 </html>

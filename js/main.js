@@ -3,8 +3,6 @@
 // ============================================
 
 const STORAGE_KEY = 'timelessScentProductsV4';
-const WHATSAPP_URL = 'https://wa.me/6289682007177';
-const SHOPEE_URL = 'https://shopee.co.id/timelessscent__';
 
 function getProducts() {
     const products = localStorage.getItem(STORAGE_KEY);
@@ -20,6 +18,7 @@ function createProductCard(product) {
         </div>
         <div class="product-info">
             <h3 class="product-name">${product.name}</h3>
+            <p class="product-character">${product.scent_character}</p>
             <a href="product.html?id=${product.id}" class="btn btn-primary">View Details</a>
         </div>
     `;
@@ -30,7 +29,7 @@ function loadFeaturedProducts() {
     const grid = document.getElementById('featuredGrid');
     if (!grid) return;
     const products = getProducts();
-    const featured = products.slice(0, 3);
+    const featured = products.slice(0, 3); // Original logic for featured products
     grid.innerHTML = '';
     featured.forEach(p => grid.appendChild(createProductCard(p)));
 }
