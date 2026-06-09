@@ -17,23 +17,32 @@
         <div class="nav-container">
             <a href="index.html" class="logo">TIMELESS SCENT</a>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="products.html" class="nav-link">Products</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="index.html" class="nav-link active" data-i18n="nav.home">Home</a></li>
+                <li><a href="products.html" class="nav-link" data-i18n="nav.products">Products</a></li>
+                <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
             </ul>
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ar">AR</button>
+                <button class="lang-btn" data-lang="id">ID</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">TIMELESS SCENT</h1>
-            <p class="hero-subtitle">Where Luxury Meets Fragrance</p>
-            <p class="hero-description">Discover the art of fine perfumery. Each scent tells a story of elegance,
-                sophistication, and timeless beauty.</p>
+            <h1 class="hero-title" data-i18n="hero.title">TIMELESS SCENT</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Where Luxury Meets Fragrance</p>
+            <p class="hero-description" data-i18n="hero.description">Discover the art of fine perfumery. Each scent tells a story of elegance, sophistication, and timeless beauty.</p>
             <div class="hero-buttons">
-                <a href="products.html" class="btn btn-primary">Explore Products</a>
-                <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+                <a href="products.html" class="btn btn-primary" data-i18n="hero.explore">Explore Products</a>
+                <a href="contact.html" class="btn btn-secondary" data-i18n="hero.contact">Get in Touch</a>
             </div>
         </div>
     </section>
@@ -41,25 +50,25 @@
     <!-- Brand Introduction -->
     <section class="brand-intro">
         <div class="container">
-            <h2 class="section-title">Our Craft</h2>
-            <p class="brand-text">At Timeless Scent, we believe that fragrance is more than a scent - it's an
+            <h2 class="section-title" data-i18n="brand.title">Our Craft</h2>
+            <p class="brand-text" data-i18n="brand.description">At Timeless Scent, we believe that fragrance is more than a scent - it's an
                 experience, a memory, a moment frozen in time. Each perfume in our collection is meticulously crafted
                 using the finest ingredients from around the world.</p>
             <div class="brand-features">
                 <div class="feature">
                     <div class="feature-icon">✧</div>
-                    <h3>Premium Quality</h3>
-                    <p>Sourced from the finest fragrance suppliers worldwide</p>
+                    <h3 data-i18n="brand.quality">Premium Quality</h3>
+                    <p data-i18n="brand.quality_desc">Sourced from the finest fragrance suppliers worldwide</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">✦</div>
-                    <h3>Artisan Crafted</h3>
-                    <p>Carefully blended to perfection by master perfumers</p>
+                    <h3 data-i18n="brand.artisan">Artisan Crafted</h3>
+                    <p data-i18n="brand.artisan_desc">Carefully blended to perfection by master perfumers</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">◆</div>
-                    <h3>Luxury Experience</h3>
-                    <p>Designed for those who appreciate the finer things</p>
+                    <h3 data-i18n="brand.luxury">Luxury Experience</h3>
+                    <p data-i18n="brand.luxury_desc">Designed for those who appreciate the finer things</p>
                 </div>
             </div>
         </div>
@@ -68,12 +77,12 @@
     <!-- Featured Products Section -->
     <section class="featured-products">
         <div class="container">
-            <h2 class="section-title">Featured Collection</h2>
+            <h2 class="section-title" data-i18n="featured.title">Featured Collection</h2>
             <div class="products-grid" id="featuredGrid">
                 <!-- Products will be loaded here by JavaScript -->
             </div>
             <div class="empty-state" id="emptyState" style="display: none;">
-                <p>No products yet. Visit the <a href="admin.html">admin panel</a> to add your first perfume.</p>
+                <p data-i18n="products.empty">No products yet. Visit the <a href="admin.html">admin panel</a> to add your first perfume.</p>
             </div>
         </div>
     </section>
@@ -81,9 +90,9 @@
     <!-- Call to Action -->
     <section class="cta-section">
         <div class="container">
-            <h2>Ready to Experience Luxury?</h2>
-            <p>Browse our complete collection of premium fragrances</p>
-            <a href="products.html" class="btn btn-large">View All Products</a>
+            <h2 data-i18n="cta.title">Ready to Experience Luxury?</h2>
+            <p data-i18n="cta.subtitle">Browse our complete collection of premium fragrances</p>
+            <a href="products.html" class="btn btn-large" data-i18n="cta.button">View All Products</a>
         </div>
     </section>
 
@@ -92,35 +101,37 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>TIMELESS SCENT</h3>
-                    <p>Luxury fragrances for the discerning taste</p>
+                    <h3 data-i18n="footer.brand">TIMELESS SCENT</h3>
+                    <p data-i18n="footer.brandDesc">Luxury fragrances for the discerning taste</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3 data-i18n="footer.quickLinks">Quick Links</h3>
                     <ul>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                        <li><a href="products.html" data-i18n="nav.products">Products</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Connect With Us</h3>
+                    <h3 data-i18n="footer.connect">Connect With Us</h3>
                     <div class="social-links">
-                        <a href="https://instagram.com/timelessscent___" target="_blank"
-                            class="social-icon">Instagram</a>
-                        <a href="https://shopee.co.id/timelessscent__" target="_blank" class="social-icon">Shop</a>
-                        <a href="https://wa.me/6289682007177" target="_blank" class="social-icon">WhatsApp</a>
+                        <a href="https://instagram.com/timelessscent___" target="_blank" class="social-icon" data-i18n="footer.instagram">Instagram</a>
+                        <a href="https://shopee.co.id/timelessscent__" target="_blank" class="social-icon" data-i18n="footer.shop">Shop</a>
+                        <a href="https://wa.me/6289682007177" target="_blank" class="social-icon" data-i18n="footer.whatsapp">WhatsApp</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Timeless Scent. All rights reserved.</p>
+                <p data-i18n="footer.copyright">&copy; 2024 Timeless Scent. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/init.js"></script>
     <script src="js/main.js"></script>
     <script>
+        window.addEventListener('languageChanged', loadFeaturedProducts);
         loadFeaturedProducts();
     </script>
 </body>

@@ -1,0 +1,296 @@
+{
+  "en": {
+    "nav": {
+      "home": "Home",
+      "products": "Products",
+      "contact": "Contact",
+      "admin": "Admin"
+    },
+    "hero": {
+      "title": "TIMELESS SCENT",
+      "subtitle": "Where Luxury Meets Fragrance",
+      "description": "Discover the art of fine perfumery. Each scent tells a story of elegance, sophistication, and timeless beauty.",
+      "explore": "Explore Products",
+      "contact": "Get in Touch"
+    },
+    "brand": {
+      "title": "Our Craft",
+      "description": "At Timeless Scent, we believe that fragrance is more than a scent - it's an experience, a memory, a moment frozen in time. Each perfume in our collection is meticulously crafted using the finest ingredients from around the world.",
+      "quality": "Premium Quality",
+      "quality_desc": "Sourced from the finest fragrance suppliers worldwide",
+      "artisan": "Artisan Crafted",
+      "artisan_desc": "Carefully blended to perfection by master perfumers",
+      "luxury": "Luxury Experience",
+      "luxury_desc": "Designed for those who appreciate the finer things"
+    },
+    "featured": {
+      "title": "Featured Collection"
+    },
+    "cta": {
+      "title": "Ready to Experience Luxury?",
+      "subtitle": "Browse our complete collection of premium fragrances",
+      "button": "View All Products"
+    },
+    "products": {
+      "title": "Our Collection",
+      "subtitle": "Discover our curated selection of luxury fragrances",
+      "empty": "No products available yet. Add products through the admin panel.",
+      "viewDetails": "View Details"
+    },
+    "product": {
+      "backToProducts": "← Back to Products",
+      "topNotes": "Top Notes",
+      "heartNotes": "Heart Notes",
+      "baseNotes": "Base Notes",
+      "description": "Description",
+      "orderShopee": "Order on Shopee",
+      "orderWhatsApp": "Order via WhatsApp",
+      "relatedTitle": "You Might Also Like",
+      "notFound": "Product not found."
+    },
+    "contact": {
+      "title": "Connect With Us",
+      "subtitle": "Have questions about our fragrances? Want to place an order? We're here to help!",
+      "email": "Email",
+      "emailDesc": "Send us an email and we'll respond within 24 hours.",
+      "whatsapp": "WhatsApp",
+      "whatsappDesc": "Chat with us on WhatsApp for quick inquiries and orders.",
+      "instagram": "Instagram",
+      "instagramDesc": "Follow us for updates, new releases, and exclusive content.",
+      "orderNow": "Order now?",
+      "orderDesc": "Shop directly on Shopee for all your favorite perfumes.",
+      "specialPrice": "Special price?",
+      "specialDesc": "Chat with us on WhatsApp for special pricing and quick help.",
+      "shopee": "Shopee",
+      "whatsappButton": "WhatsApp"
+    },
+    "footer": {
+      "brand": "TIMELESS SCENT",
+      "brandDesc": "Luxury fragrances for the discerning taste",
+      "quickLinks": "Quick Links",
+      "connect": "Connect With Us",
+      "instagram": "Instagram",
+      "shop": "Shop",
+      "whatsapp": "WhatsApp",
+      "copyright": "© 2024 Timeless Scent. All rights reserved."
+    },
+    "admin": {
+      "title": "Admin Panel",
+      "addProduct": "Add Product",
+      "manageProducts": "Manage Products",
+      "productName": "Product Name",
+      "scentCharacter": "Scent Character",
+      "image": "Image URL",
+      "topNotes": "Top Notes (comma-separated)",
+      "heartNotes": "Heart Notes (comma-separated)",
+      "baseNotes": "Base Notes (comma-separated)",
+      "description": "Description",
+      "story": "Story",
+      "submit": "Add Product",
+      "edit": "Edit",
+      "delete": "Delete",
+      "update": "Update Product",
+      "addedSuccess": "Product added successfully!",
+      "updatedSuccess": "Product updated successfully!",
+      "deletedSuccess": "Product deleted successfully!",
+      "error": "An error occurred. Please try again.",
+      "validation": "Please fill in all fields."
+    }
+  },
+  "ar": {
+    "nav": {
+      "home": "الرئيسية",
+      "products": "المنتجات",
+      "contact": "اتصل بنا",
+      "admin": "الإدارة"
+    },
+    "hero": {
+      "title": "TIMELESS SCENT",
+      "subtitle": "حيث تلتقي الفخامة بالعطور",
+      "description": "اكتشف فن صناعة العطور الراقية. كل رائحة تحكي قصة من الأناقة والرقي والجمال الخالد.",
+      "explore": "استكشف المنتجات",
+      "contact": "تواصل معنا"
+    },
+    "brand": {
+      "title": "حرفتنا",
+      "description": "نعتقد في Timeless Scent أن العطر أكثر من مجرد رائحة - إنه تجربة، ذاكرة، لحظة محفوظة في الزمن. كل عطر في مجموعتنا يتم إنشاؤه بعناية باستخدام أفضل المكونات من حول العالم.",
+      "quality": "جودة عالية",
+      "quality_desc": "مصادر من أفضل موردي العطور في العالم",
+      "artisan": "صنعة حرفية",
+      "artisan_desc": "مزيج بعناية إلى الكمال من قبل العطارين الماهرين",
+      "luxury": "تجربة فاخرة",
+      "luxury_desc": "مصممة لأولئك الذين يقدرون أفضل الأشياء"
+    },
+    "featured": {
+      "title": "المجموعة المميزة"
+    },
+    "cta": {
+      "title": "هل أنت مستعد لتجربة الفخامة؟",
+      "subtitle": "تصفح مجموعتنا الكاملة من العطور الفاخرة",
+      "button": "عرض جميع المنتجات"
+    },
+    "products": {
+      "title": "مجموعتنا",
+      "subtitle": "اكتشف مجموعتنا المختارة من العطور الفاخرة",
+      "empty": "لا توجد منتجات متاحة حتى الآن. أضف المنتجات من خلال لوحة الإدارة.",
+      "viewDetails": "عرض التفاصيل"
+    },
+    "product": {
+      "backToProducts": "← العودة إلى المنتجات",
+      "topNotes": "الروائح العليا",
+      "heartNotes": "روائح القلب",
+      "baseNotes": "الروائح الأساسية",
+      "description": "الوصف",
+      "orderShopee": "اطلب من Shopee",
+      "orderWhatsApp": "اطلب عبر WhatsApp",
+      "relatedTitle": "قد تعجبك أيضاً",
+      "notFound": "المنتج غير موجود."
+    },
+    "contact": {
+      "title": "تواصل معنا",
+      "subtitle": "هل لديك أسئلة حول عطورنا؟ هل تريد تقديم طلب؟ نحن هنا لمساعدتك!",
+      "email": "البريد الإلكتروني",
+      "emailDesc": "أرسل لنا بريداً إلكترونياً وسنرد عليك في غضون 24 ساعة.",
+      "whatsapp": "WhatsApp",
+      "whatsappDesc": "تحدث معنا على WhatsApp للاستفسارات السريعة والطلبات.",
+      "instagram": "Instagram",
+      "instagramDesc": "تابعنا للحصول على التحديثات والإصدارات الجديدة والمحتوى الحصري.",
+      "orderNow": "اطلب الآن؟",
+      "orderDesc": "تسوق مباشرة على Shopee لجميع عطورك المفضلة.",
+      "specialPrice": "سعر خاص؟",
+      "specialDesc": "تحدث معنا على WhatsApp للحصول على أسعار خاصة والمساعدة السريعة.",
+      "shopee": "Shopee",
+      "whatsappButton": "WhatsApp"
+    },
+    "footer": {
+      "brand": "TIMELESS SCENT",
+      "brandDesc": "عطور فاخرة للذوق الرفيع",
+      "quickLinks": "روابط سريعة",
+      "connect": "تواصل معنا",
+      "instagram": "Instagram",
+      "shop": "تسوق",
+      "whatsapp": "WhatsApp",
+      "copyright": "© 2024 Timeless Scent. جميع الحقوق محفوظة."
+    },
+    "admin": {
+      "title": "لوحة الإدارة",
+      "addProduct": "إضافة منتج",
+      "manageProducts": "إدارة المنتجات",
+      "productName": "اسم المنتج",
+      "scentCharacter": "شخصية الرائحة",
+      "image": "رابط الصورة",
+      "topNotes": "الروائح العليا (مفصولة بفاصلات)",
+      "heartNotes": "روائح القلب (مفصولة بفاصلات)",
+      "baseNotes": "الروائح الأساسية (مفصولة بفاصلات)",
+      "description": "الوصف",
+      "story": "القصة",
+      "submit": "إضافة منتج",
+      "edit": "تحرير",
+      "delete": "حذف",
+      "update": "تحديث المنتج",
+      "addedSuccess": "تمت إضافة المنتج بنجاح!",
+      "updatedSuccess": "تم تحديث المنتج بنجاح!",
+      "deletedSuccess": "تم حذف المنتج بنجاح!",
+      "error": "حدث خطأ. يرجى المحاولة مرة أخرى.",
+      "validation": "يرجى ملء جميع الحقول."
+    }
+  },
+  "id": {
+    "nav": {
+      "home": "Beranda",
+      "products": "Produk",
+      "contact": "Kontak",
+      "admin": "Admin"
+    },
+    "hero": {
+      "title": "TIMELESS SCENT",
+      "subtitle": "Tempat Kemewahan Bertemu Aroma",
+      "description": "Temukan seni penyulingan wewangian yang halus. Setiap aroma menceritakan kisah keanggunan, kecanggihan, dan keindahan yang abadi.",
+      "explore": "Jelajahi Produk",
+      "contact": "Hubungi Kami"
+    },
+    "brand": {
+      "title": "Kerajinan Kami",
+      "description": "Di Timeless Scent, kami percaya bahwa wewangian lebih dari sekadar aroma - ini adalah pengalaman, kenangan, momen yang terbeku dalam waktu. Setiap wewangian dalam koleksi kami dibuat dengan cermat menggunakan bahan-bahan terbaik dari seluruh dunia.",
+      "quality": "Kualitas Premium",
+      "quality_desc": "Bersumber dari pemasok wewangian terbaik di seluruh dunia",
+      "artisan": "Kerajinan Pengrajin",
+      "artisan_desc": "Dicampur dengan hati-hati hingga sempurna oleh pengrajin perfumer ahli",
+      "luxury": "Pengalaman Kemewahan",
+      "luxury_desc": "Dirancang untuk mereka yang menghargai hal-hal terbaik"
+    },
+    "featured": {
+      "title": "Koleksi Unggulan"
+    },
+    "cta": {
+      "title": "Siap Merasakan Kemewahan?",
+      "subtitle": "Jelajahi koleksi lengkap wewangian premium kami",
+      "button": "Lihat Semua Produk"
+    },
+    "products": {
+      "title": "Koleksi Kami",
+      "subtitle": "Temukan pilihan wewangian mewah yang telah dikurasi oleh kami",
+      "empty": "Belum ada produk yang tersedia. Tambahkan produk melalui panel admin.",
+      "viewDetails": "Lihat Rincian"
+    },
+    "product": {
+      "backToProducts": "← Kembali ke Produk",
+      "topNotes": "Nada Atas",
+      "heartNotes": "Nada Jantung",
+      "baseNotes": "Nada Dasar",
+      "description": "Deskripsi",
+      "orderShopee": "Pesan di Shopee",
+      "orderWhatsApp": "Pesan via WhatsApp",
+      "relatedTitle": "Anda Mungkin Juga Suka",
+      "notFound": "Produk tidak ditemukan."
+    },
+    "contact": {
+      "title": "Hubungi Kami",
+      "subtitle": "Punya pertanyaan tentang wewangian kami? Ingin membuat pesanan? Kami di sini untuk membantu!",
+      "email": "Email",
+      "emailDesc": "Kirimkan email kepada kami dan kami akan merespons dalam 24 jam.",
+      "whatsapp": "WhatsApp",
+      "whatsappDesc": "Bicaralah dengan kami di WhatsApp untuk pertanyaan cepat dan pesanan.",
+      "instagram": "Instagram",
+      "instagramDesc": "Ikuti kami untuk pembaruan, rilis baru, dan konten eksklusif.",
+      "orderNow": "Pesan sekarang?",
+      "orderDesc": "Belanja langsung di Shopee untuk semua wewangian favorit Anda.",
+      "specialPrice": "Harga spesial?",
+      "specialDesc": "Bicaralah dengan kami di WhatsApp untuk harga khusus dan bantuan cepat.",
+      "shopee": "Shopee",
+      "whatsappButton": "WhatsApp"
+    },
+    "footer": {
+      "brand": "TIMELESS SCENT",
+      "brandDesc": "Wewangian mewah untuk selera yang terdiskriminasi",
+      "quickLinks": "Tautan Cepat",
+      "connect": "Hubungkan Dengan Kami",
+      "instagram": "Instagram",
+      "shop": "Toko",
+      "whatsapp": "WhatsApp",
+      "copyright": "© 2024 Timeless Scent. Semua hak dilindungi."
+    },
+    "admin": {
+      "title": "Panel Admin",
+      "addProduct": "Tambah Produk",
+      "manageProducts": "Kelola Produk",
+      "productName": "Nama Produk",
+      "scentCharacter": "Karakter Aroma",
+      "image": "URL Gambar",
+      "topNotes": "Nada Atas (dipisahkan koma)",
+      "heartNotes": "Nada Jantung (dipisahkan koma)",
+      "baseNotes": "Nada Dasar (dipisahkan koma)",
+      "description": "Deskripsi",
+      "story": "Cerita",
+      "submit": "Tambah Produk",
+      "edit": "Edit",
+      "delete": "Hapus",
+      "update": "Perbarui Produk",
+      "addedSuccess": "Produk berhasil ditambahkan!",
+      "updatedSuccess": "Produk berhasil diperbarui!",
+      "deletedSuccess": "Produk berhasil dihapus!",
+      "error": "Terjadi kesalahan. Silakan coba lagi.",
+      "validation": "Silakan isi semua bidang."
+    }
+  }
+}

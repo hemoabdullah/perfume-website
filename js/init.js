@@ -1,5 +1,10 @@
 // Auto-load products from products-data.json into localStorage.
 // Always sync from JSON to ensure data stays up to date.
+
+// Define missing constants
+const WHATSAPP_URL = 'https://wa.me/6289682007177';
+const SHOPEE_URL = 'https://shopee.co.id/timelessscent__';
+
 async function initializeProducts() {
     const STORAGE_KEY = 'timelessScentProductsV4';
 

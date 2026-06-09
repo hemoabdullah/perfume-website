@@ -17,20 +17,30 @@
         <div class="nav-container">
             <a href="index.html" class="logo">TIMELESS SCENT</a>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="products.html" class="nav-link active">Products</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="products.html" class="nav-link active" data-i18n="nav.products">Products</a></li>
+                <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
             </ul>
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ar">AR</button>
+                <button class="lang-btn" data-lang="id">ID</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
     <!-- Product Detail Section -->
     <section class="product-detail">
         <div class="container">
-            <a href="products.html" class="back-link">← Back to Products</a>
+            <a href="products.html" class="back-link" data-i18n="product.backToProducts">← Back to Products</a>
             <div id="productContainer">
                 <!-- Product details will be loaded here by JavaScript -->
-                <p class="empty-state">Product not found.</p>
+                <p class="empty-state" data-i18n="product.notFound">Product not found.</p>
             </div>
         </div>
     </section>
@@ -38,7 +48,7 @@
     <!-- Related Products Section -->
     <section class="featured-products">
         <div class="container">
-            <h2 class="section-title">You Might Also Like</h2>
+            <h2 class="section-title" data-i18n="product.relatedTitle">You Might Also Like</h2>
             <div class="products-grid" id="relatedGrid">
                 <!-- Related products will be loaded here by JavaScript -->
             </div>
@@ -50,36 +60,40 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>TIMELESS SCENT</h3>
-                    <p>Luxury fragrances for the discerning taste</p>
+                    <h3 data-i18n="footer.brand">TIMELESS SCENT</h3>
+                    <p data-i18n="footer.brandDesc">Luxury fragrances for the discerning taste</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3 data-i18n="footer.quickLinks">Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                        <li><a href="products.html" data-i18n="nav.products">Products</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Connect With Us</h3>
+                    <h3 data-i18n="footer.connect">Connect With Us</h3>
                     <div class="social-links">
-                        <a href="https://instagram.com/timelessscent___" target="_blank"
-                            class="social-icon">Instagram</a>
-                        <a href="https://shopee.co.id/timelessscent__" target="_blank" class="social-icon">Shop</a>
-                        <a href="https://wa.me/6289682007177" target="_blank" class="social-icon">WhatsApp</a>
+                        <a href="https://instagram.com/timelessscent___" target="_blank" class="social-icon" data-i18n="footer.instagram">Instagram</a>
+                        <a href="https://shopee.co.id/timelessscent__" target="_blank" class="social-icon" data-i18n="footer.shop">Shop</a>
+                        <a href="https://wa.me/6289682007177" target="_blank" class="social-icon" data-i18n="footer.whatsapp">WhatsApp</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Timeless Scent. All rights reserved.</p>
+                <p data-i18n="footer.copyright">&copy; 2024 Timeless Scent. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/init.js"></script>
     <script src="js/main.js"></script>
     <script>
+        window.addEventListener('languageChanged', () => {
+            loadProductDetail();
+            loadRelatedProducts();
+        });
         loadProductDetail();
         loadRelatedProducts();
     </script>

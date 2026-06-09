@@ -16,51 +16,61 @@
         <div class="nav-container">
             <a href="index.html" class="logo">TIMELESS SCENT</a>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="products.html" class="nav-link">Products</a></li>
-                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="products.html" class="nav-link" data-i18n="nav.products">Products</a></li>
+                <li><a href="contact.html" class="nav-link active" data-i18n="nav.contact">Contact</a></li>
             </ul>
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ar">AR</button>
+                <button class="lang-btn" data-lang="id">ID</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
     <section class="contact-section">
         <div class="container">
             <div class="contact-content">
                 <div class="contact-info">
-                    <h2>Connect With Us</h2>
-                    <p>Have questions about our fragrances? Want to place an order? We're here to help!</p>
+                    <h2 data-i18n="contact.title">Connect With Us</h2>
+                    <p data-i18n="contact.subtitle">Have questions about our fragrances? Want to place an order? We're here to help!</p>
 
                     <div class="contact-methods">
                         <div class="contact-method">
-                            <h3>Email</h3>
-                            <p>Send us an email and we'll respond within 24 hours.</p>
+                            <h3 data-i18n="contact.email">Email</h3>
+                            <p data-i18n="contact.emailDesc">Send us an email and we'll respond within 24 hours.</p>
                             <a href="mailto:hamamxklb@gmail.com" class="contact-link">hamamxklb@gmail.com</a>
                         </div>
 
                         <div class="contact-method">
-                            <h3>WhatsApp</h3>
-                            <p>Chat with us on WhatsApp for quick inquiries and orders.</p>
+                            <h3 data-i18n="contact.whatsapp">WhatsApp</h3>
+                            <p data-i18n="contact.whatsappDesc">Chat with us on WhatsApp for quick inquiries and orders.</p>
                             <a href="https://wa.me/6289682007177?text=Hi%20Timeless%20Scent%21%20I'm%20interested%20in%20your%20perfumes"
                                 target="_blank" class="contact-link">+62 896-8200-7177</a>
                         </div>
 
                         <div class="contact-method">
-                            <h3>Instagram</h3>
-                            <p>Follow us for updates, new releases, and exclusive content.</p>
+                            <h3 data-i18n="contact.instagram">Instagram</h3>
+                            <p data-i18n="contact.instagramDesc">Follow us for updates, new releases, and exclusive content.</p>
                             <a href="https://www.instagram.com/timelessscent__/" target="_blank"
                                 class="contact-link">@timelessscent__</a>
                         </div>
 
                         <div class="contact-method order-contact-method">
-                            <h3>Order now?</h3>
-                            <p>Shop directly on Shopee for all your favorite perfumes.</p>
+                            <h3 data-i18n="contact.orderNow">Order now?</h3>
+                            <p data-i18n="contact.orderDesc">Shop directly on Shopee for all your favorite perfumes.</p>
                             <a href="https://shopee.co.id/timelessscent__" target="_blank"
-                                class="btn btn-primary">Shopee</a>
+                                class="btn btn-primary" data-i18n="contact.shopee">Shopee</a>
                         </div>
 
                         <div class="contact-method order-contact-method">
-                            <h3>Special price?</h3>
-                            <p>Chat with us on WhatsApp for special pricing and quick help.</p>
-                            <a href="https://wa.me/6289682007177" target="_blank" class="btn btn-secondary">Whatsapp</a>
+                            <h3 data-i18n="contact.specialPrice">Special price?</h3>
+                            <p data-i18n="contact.specialDesc">Chat with us on WhatsApp for special pricing and quick help.</p>
+                            <a href="https://wa.me/6289682007177" target="_blank" class="btn btn-secondary" data-i18n="contact.whatsappButton">WhatsApp</a>
                         </div>
                     </div>
                 </div>
@@ -72,33 +82,33 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>TIMELESS SCENT</h3>
-                    <p>Luxury fragrances for the discerning taste</p>
+                    <h3 data-i18n="footer.brand">TIMELESS SCENT</h3>
+                    <p data-i18n="footer.brandDesc">Luxury fragrances for the discerning taste</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3 data-i18n="footer.quickLinks">Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                        <li><a href="products.html" data-i18n="nav.products">Products</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Connect With Us</h3>
+                    <h3 data-i18n="footer.connect">Connect With Us</h3>
                     <div class="social-links">
-                        <a href="https://instagram.com/timelessscent___" target="_blank"
-                            class="social-icon">Instagram</a>
-                        <a href="https://shopee.co.id/timelessscent__" target="_blank" class="social-icon">Shop</a>
-                        <a href="https://wa.me/6289682007177" target="_blank" class="social-icon">WhatsApp</a>
+                        <a href="https://instagram.com/timelessscent___" target="_blank" class="social-icon" data-i18n="footer.instagram">Instagram</a>
+                        <a href="https://shopee.co.id/timelessscent__" target="_blank" class="social-icon" data-i18n="footer.shop">Shop</a>
+                        <a href="https://wa.me/6289682007177" target="_blank" class="social-icon" data-i18n="footer.whatsapp">WhatsApp</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Timeless Scent. All rights reserved.</p>
+                <p data-i18n="footer.copyright">&copy; 2024 Timeless Scent. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/init.js"></script>
     <script src="js/main.js"></script>
 </body>
