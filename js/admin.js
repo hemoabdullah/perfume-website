@@ -2,7 +2,7 @@
 // ADMIN PANEL JAVASCRIPT
 // ============================================
 
-const STORAGE_KEY = 'timelessScentProductsV3';
+const STORAGE_KEY = 'timelessScentProductsV4';
 
 // Get products from localStorage
 function getProducts() {
@@ -12,7 +12,11 @@ function getProducts() {
 
 // Save products to localStorage
 function saveProducts(products) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
+    } catch (e) {
+        showMessage('Storage full! Please delete some products or use smaller images.', 'error');
+    }
 }
 
 // Handle product form submission
@@ -28,7 +32,7 @@ async function handleAddProduct(event) {
     }
 
     try {
-        const imageBase64 = await imageToBase64(file);
+        const imageBase64 = await compressImage(file, 800);
 
         const product = {
             id: generateId(),
@@ -139,7 +143,7 @@ async function handleUpdateProduct(productId) {
     // Update with new image if provided
     if (file) {
         try {
-            const imageBase64 = await imageToBase64(file);
+            const imageBase64 = await compressImage(file, 800);
             product.image = imageBase64;
         } catch (error) {
             showMessage('Error processing image: ' + error.message, 'error');
@@ -232,12 +236,30 @@ function generateId() {
     return 'perfume_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
 }
 
-// Convert image to base64
-function imageToBase64(file) {
+// Compress and convert image to base64
+function compressImage(file, maxWidth) {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = reject;
         reader.readAsDataURL(file);
+        reader.onload = (event) => {
+            const img = new Image();
+            img.src = event.target.result;
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+                const scaleFactor = maxWidth / img.width;
+                if (scaleFactor < 1) {
+                    canvas.width = maxWidth;
+                    canvas.height = img.height * scaleFactor;
+                } else {
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                }
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                // Using 0.7 quality for a good balance of clarity and file size
+                resolve(canvas.toDataURL('image/jpeg', 0.7));
+            };
+        };
+        reader.onerror = reject;
     });
 }

@@ -30,9 +30,7 @@ function loadFeaturedProducts() {
     const grid = document.getElementById('featuredGrid');
     if (!grid) return;
     const products = getProducts();
-    const featuredIds = ['perfume_aeon', 'perfume_qessah', 'perfume_scandal'];
-    const featured = products.filter(p => featuredIds.includes(p.id));
-
+    const featured = products.slice(0, 3);
     grid.innerHTML = '';
     featured.forEach(p => grid.appendChild(createProductCard(p)));
 }

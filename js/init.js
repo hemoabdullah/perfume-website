@@ -3,6 +3,12 @@
 async function initializeProducts() {
     const STORAGE_KEY = 'timelessScentProductsV4';
 
+    // Check if products already exist in localStorage
+    const existingProducts = localStorage.getItem(STORAGE_KEY);
+    if (existingProducts && JSON.parse(existingProducts).length > 0) {
+        return; // Don't overwrite existing user/admin data
+    }
+
     try {
         const response = await fetch('./products-data.json?v=' + Date.now());
         if (response.ok) {
