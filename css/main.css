@@ -1,31 +1,32 @@
 /* ============================================
-   PREMIUM LUXURY REDESIGN - REPAIRED & UNIFIED
+   PREMIUM LUXURY REDESIGN - RESTORED IDENTITY
    ============================================ */
 
 :root {
     /* Theme: Dark (Default) */
     --bg: #050505;
     --bg-alt: #0f0f0f;
-    --card-bg: #121212;
+    --card-bg: #0a0a0a;
     --text: #ffffff;
     --text-muted: #a0a0a0;
     --gold: #D4AF37;
     --gold-hover: #F5E6D3;
-    --border: rgba(212, 175, 55, 0.2);
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --border: rgba(212, 175, 55, 0.15);
+    --shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
     --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     --header-height: 80px;
 }
 
 [data-theme="light"] {
-    --bg: #fafafa;
-    --bg-alt: #f0f0f0;
-    --card-bg: #ffffff;
+    /* Luxury Champagne Theme */
+    --bg: #FFFAF5;
+    --bg-alt: #F3E5D8;
+    --card-bg: #FFFFFF;
     --text: #111111;
-    --text-muted: #555555;
-    --gold: #af8f2c;
-    --gold-hover: #111111;
-    --border: rgba(175, 143, 44, 0.15);
+    --text-muted: #666666;
+    --gold: #AF8F2C;
+    --gold-hover: #1A1A1A;
+    --border: rgba(175, 143, 44, 0.2);
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
@@ -213,46 +214,45 @@ h3,
 }
 
 .hero {
-    height: calc(100vh - var(--header-height));
-    background: var(--bg);
+    min-height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/12 parfumes/homepage.jpeg') center/cover no-repeat;
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
     overflow: hidden;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+[data-theme="light"] .hero {
+    background: linear-gradient(rgba(255, 250, 245, 0.8), rgba(255, 250, 245, 0.8)), url('../img/12 parfumes/homepage.jpeg') center/cover no-repeat;
 }
 
 .hero-content {
-    max-width: 700px;
+    max-width: 800px;
     padding: 0 40px;
     z-index: 10;
 }
 
 .hero-title {
-    font-size: clamp(40px, 8vw, 90px);
+    font-size: clamp(48px, 8vw, 84px);
     line-height: 1.1;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     color: var(--gold);
+    text-transform: uppercase;
 }
 
 .hero-subtitle {
-    font-size: clamp(14px, 2vw, 20px);
-    letter-spacing: 4px;
-    margin-bottom: 30px;
+    font-size: clamp(16px, 2.5vw, 22px);
+    letter-spacing: 6px;
+    margin-bottom: 40px;
     color: var(--text-muted);
-}
-
-.hero-image {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    background: url('../img/12 parfumes/homepage.jpeg') center/cover;
-    mask-image: linear-gradient(to left, black 70%, transparent);
+    text-transform: uppercase;
 }
 
 .btn {
-    display: inline-flex;
+    display: inline-block;
     padding: 16px 32px;
     font-size: 12px;
     font-weight: bold;
@@ -268,10 +268,23 @@ h3,
     color: #000;
 }
 
+.btn-primary:hover {
+    background: var(--gold-hover);
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
 }
 
 .grid-container {
@@ -293,7 +306,7 @@ h3,
 }
 
 .product-image {
-    aspect-ratio: 1/1.2;
+    height: 320px;
     background: var(--bg-alt);
     display: flex;
     align-items: center;
@@ -303,7 +316,7 @@ h3,
 
 .product-image img {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 280px;
     object-fit: contain;
 }
 
@@ -313,8 +326,39 @@ h3,
 }
 
 .product-name {
-    font-size: 22px;
+    font-size: 20px;
+    font-family: 'Playfair Display', serif;
     margin-bottom: 15px;
+    color: var(--text);
+}
+
+.footer {
+    background: var(--bg-alt);
+    border-top: 1px solid var(--border);
+    padding: 80px 0 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-column h4 {
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.footer-column p,
+.footer-column li {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 12px;
+    list-style: none;
 }
 
 .reveal {

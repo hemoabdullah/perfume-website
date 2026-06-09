@@ -2,7 +2,7 @@
 // CORE ENGINE - REPAIRED & STABILIZED
 // ============================================
 
-const STORAGE_KEY = 'timelessScentProductsV4'; // Kept V4 to preserve your existing data
+const STORAGE_KEY = 'timelessScentProductsV4';
 const WHATSAPP_URL = 'https://wa.me/6288805204080';
 const SHOPEE_URL = 'https://shopee.co.id/timelessscent__';
 
@@ -28,16 +28,32 @@ function toggleTheme() {
 // --- Translation System ---
 const translations = {
     en: {
-        nav_home: "Home", nav_products: "Collection", nav_contact: "Contact", nav_admin: "Admin",
-        hero_title: "TIMELESS SCENT", hero_sub: "Where Luxury Meets Fragrance", hero_cta: "Explore Collection",
-        feat_title: "Featured Masterpieces", view_details: "View Details", order_now: "Order Now",
-        notes_top: "Top Notes", notes_heart: "Heart Notes", notes_base: "Base Notes"
+        nav_home: "Home",
+        nav_products: "Collection",
+        nav_contact: "Contact",
+        nav_admin: "Admin",
+        hero_sub: "Where Luxury Meets Fragrance",
+        hero_cta: "Explore Collection",
+        feat_title: "Featured Masterpieces",
+        view_details: "View Details",
+        order_now: "Order Now",
+        notes_top: "Top Notes",
+        notes_heart: "Heart Notes",
+        notes_base: "Base Notes"
     },
     ar: {
-        nav_home: "الرئيسية", nav_products: "المجموعة", nav_contact: "اتصل بنا", nav_admin: "لوحة التحكم",
-        hero_title: "تايمليس سينت", hero_sub: "حيث تلتقي الفخامة بالعطر", hero_cta: "استكشف المجموعة",
-        feat_title: "روائع مختارة", view_details: "عرض التفاصيل", order_now: "اطلب الآن",
-        notes_top: "قمة العطر", notes_heart: "قلب العطر", notes_base: "قاعدة العطر"
+        nav_home: "الرئيسية",
+        nav_products: "المجموعة",
+        nav_contact: "تواصل معنا",
+        nav_admin: "الإدارة",
+        hero_sub: "حيث تلتقي الفخامة بالعطور الفاخرة",
+        hero_cta: "استكشف المجموعة",
+        feat_title: "روائع مختارة",
+        view_details: "التفاصيل",
+        order_now: "اطلب الآن",
+        notes_top: "قمة العطر",
+        notes_heart: "قلب العطر",
+        notes_base: "قاعدة العطر"
     }
 };
 
@@ -85,7 +101,7 @@ function createProductCard(product, index) {
     card.className = 'product-card reveal';
     card.innerHTML = `
     <div class="product-image">
-      <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.src='img/placeholder.png'">
+      <img src="${product.image}" alt="${product.name}" loading="lazy" style="max-height: 250px;">
     </div>
     <div class="product-info">
       <h3 class="product-name">${product.name}</h3>
