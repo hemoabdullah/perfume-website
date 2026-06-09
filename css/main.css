@@ -1,76 +1,89 @@
 /* ============================================
-   PREMIUM LUXURY REDESIGN - RESTORED IDENTITY
+   LUXURY PERFUME WEBSITE - MAIN STYLESHEET
    ============================================ */
 
 :root {
-    /* Theme: Dark (Default) */
-    --bg: #050505;
-    --bg-alt: #0f0f0f;
-    --card-bg: #0a0a0a;
-    --text: #ffffff;
-    --text-muted: #a0a0a0;
-    --gold: #D4AF37;
-    --gold-hover: #F5E6D3;
-    --border: rgba(212, 175, 55, 0.15);
-    --shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    --header-height: 80px;
+    --primary-color: #D4AF37;
+    --dark-color: #000000;
+    --light-color: #FFFFFF;
+    --secondary-dark: #1a1a1a;
+    --text-color: #FFFFFF;
+    --border-color: #D4AF37;
+    --transition: all 0.3s ease;
 }
 
-[data-theme="light"] {
-    /* Luxury Champagne Theme */
-    --bg: #FFFAF5;
-    --bg-alt: #F3E5D8;
-    --card-bg: #FFFFFF;
-    --text: #111111;
-    --text-muted: #666666;
-    --gold: #AF8F2C;
-    --gold-hover: #1A1A1A;
-    --border: rgba(175, 143, 44, 0.2);
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-/* Base Resets */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
 }
 
-html,
-body {
-    overflow-x: hidden;
+html {
     scroll-behavior: smooth;
-    min-height: 100vh;
 }
 
 body {
     font-family: 'Lato', sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
+    background-color: var(--dark-color);
+    color: var(--text-color);
     line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+    position: relative;
 }
 
-/* Typography */
-h1,
-h2,
-h3,
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    letter-spacing: 1px;
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.03) 50%, transparent 100%),
+        linear-gradient(180deg, transparent 0%, rgba(212, 175, 55, 0.02) 100%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, #D4AF37, rgba(212, 175, 55, 0)),
+        radial-gradient(2px 2px at 60px 70px, #D4AF37, rgba(212, 175, 55, 0)),
+        radial-gradient(1px 1px at 50px 50px, #D4AF37, rgba(212, 175, 55, 0)),
+        radial-gradient(1px 1px at 130px 80px, #D4AF37, rgba(212, 175, 55, 0)),
+        radial-gradient(2px 2px at 90px 10px, #D4AF37, rgba(212, 175, 55, 0));
+    background-size: 200px 200px;
+    background-position: 0 0;
+    animation: animateBackground 20s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.15;
+}
+
+@keyframes animateBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 200px 200px;
+    }
 }
 
 .navbar {
-    background-color: var(--bg);
+    background-color: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid var(--border);
-    height: var(--header-height);
+    border-bottom: 1px solid var(--primary-color);
+    height: 80px;
 }
 
 .nav-container {
@@ -84,192 +97,90 @@ h3,
 }
 
 .logo {
+    font-family: 'Playfair Display', serif;
     font-size: 24px;
-    color: var(--gold);
+    font-weight: 900;
+    color: var(--primary-color);
     text-decoration: none;
-    letter-spacing: 3px;
-}
-
-.nav-controls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.icon-btn {
-    background: rgba(212, 175, 55, 0.1);
-    border: 1px solid var(--gold);
-    color: var(--text);
-    font-size: 14px;
-    cursor: pointer;
-    padding: 8px 12px;
-    transition: var(--transition);
-    font-weight: bold;
-}
-
-.hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-    margin-left: 15px;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 2px;
-    background-color: var(--gold);
-}
-
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 300px;
-    height: 100%;
-    background: var(--bg);
-    z-index: 2000;
-    padding: 80px 40px;
-    transition: var(--transition);
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
-}
-
-[dir="rtl"] .sidebar {
-    right: auto;
-    left: -100%;
-}
-
-.sidebar.active {
-    right: 0;
-}
-
-[dir="rtl"] .sidebar.active {
-    left: 0;
-}
-
-.sidebar-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1999;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s;
-}
-
-.sidebar-overlay.active {
-    opacity: 1;
-    visibility: visible;
+    letter-spacing: 2px;
 }
 
 .nav-menu {
-    padding: 0;
     display: flex;
-    flex-direction: column;
-    gap: 25px;
     list-style: none;
+    gap: 30px;
 }
 
 .nav-link {
-    color: var(--text);
+    color: var(--text-color);
     text-decoration: none;
-    font-size: 22px;
-    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
     letter-spacing: 1px;
+    transition: var(--transition);
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--gold);
-}
-
-@media (min-width: 1024px) {
-    .hamburger {
-        display: none;
-    }
-
-    .sidebar {
-        position: static;
-        width: auto;
-        height: auto;
-        padding: 0;
-        background: none;
-        box-shadow: none;
-    }
-
-    .nav-menu {
-        flex-direction: row;
-        gap: 30px;
-    }
-
-    .nav-link {
-        font-size: 13px;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-family: 'Lato', sans-serif;
-    }
+    color: var(--primary-color);
 }
 
 .hero {
-    min-height: 80vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/12 parfumes/homepage.jpeg') center/cover no-repeat;
+    position: relative;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/12 parfumes/homepage.jpeg') center/cover no-repeat;
     text-align: center;
-    padding: 100px 20px;
-}
-
-[data-theme="light"] .hero {
-    background: linear-gradient(rgba(255, 250, 245, 0.8), rgba(255, 250, 245, 0.8)), url('../img/12 parfumes/homepage.jpeg') center/cover no-repeat;
 }
 
 .hero-content {
     max-width: 800px;
-    padding: 0 40px;
-    z-index: 10;
+    padding: 0 20px;
 }
 
 .hero-title {
-    font-size: clamp(48px, 8vw, 84px);
-    line-height: 1.1;
-    margin-bottom: 24px;
-    color: var(--gold);
-    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    letter-spacing: 8px;
 }
 
 .hero-subtitle {
-    font-size: clamp(16px, 2.5vw, 22px);
-    letter-spacing: 6px;
+    font-size: 28px;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+}
+
+.hero-description {
+    font-size: 16px;
     margin-bottom: 40px;
-    color: var(--text-muted);
-    text-transform: uppercase;
+    line-height: 1.8;
+    opacity: 0.8;
 }
 
 .btn {
-    display: inline-block;
-    padding: 16px 32px;
-    font-size: 12px;
-    font-weight: bold;
+    padding: 14px 30px;
+    font-size: 14px;
+    font-weight: 700;
     letter-spacing: 2px;
     text-decoration: none;
+    display: inline-block;
     text-transform: uppercase;
     transition: var(--transition);
-    cursor: pointer;
 }
 
 .btn-primary {
-    background: var(--gold);
-    color: #000;
+    background-color: var(--primary-color);
+    color: var(--dark-color);
 }
 
-.btn-primary:hover {
-    background: var(--gold-hover);
+.btn-secondary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    margin-left: 20px;
 }
 
 .container {
@@ -278,96 +189,111 @@ h3,
     padding: 0 20px;
 }
 
-.section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    color: var(--gold);
-    text-align: center;
-    margin-bottom: 50px;
-    text-transform: uppercase;
+.brand-intro {
+    padding: 100px 0;
 }
 
-.grid-container {
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.brand-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.feature {
+    text-align: center;
+    padding: 30px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.feature h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 40px;
-    padding: 60px 20px;
+    gap: 30px;
+    padding: 60px 0;
 }
 
 .product-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(212, 175, 55, 0.2);
     transition: var(--transition);
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--gold);
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
 }
 
 .product-image {
-    height: 320px;
-    background: var(--bg-alt);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    height: 350px;
+    overflow: hidden;
 }
 
 .product-image img {
-    max-width: 100%;
-    max-height: 280px;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .product-info {
-    padding: 30px;
+    padding: 25px;
     text-align: center;
 }
 
 .product-name {
-    font-size: 20px;
     font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--primary-color);
     margin-bottom: 15px;
-    color: var(--text);
 }
 
 .footer {
-    background: var(--bg-alt);
-    border-top: 1px solid var(--border);
-    padding: 80px 0 40px;
+    background-color: var(--secondary-dark);
+    padding: 80px 0 20px;
+    border-top: 1px solid var(--primary-color);
 }
 
-.footer-grid {
+.footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
-.footer-column h4 {
-    color: var(--gold);
-    font-size: 14px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 25px;
+.footer-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
 }
 
-.footer-column p,
-.footer-column li {
-    color: var(--text-muted);
-    font-size: 14px;
-    margin-bottom: 12px;
+.footer-section ul {
     list-style: none;
 }
 
-.reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.6s ease;
+.footer-section ul li {
+    margin-bottom: 10px;
 }
 
-.revealed {
-    opacity: 1;
-    transform: translateY(0);
+.footer-section a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    font-size: 12px;
+    opacity: 0.5;
 }

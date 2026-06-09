@@ -1,123 +1,40 @@
 // ============================================
-// CORE ENGINE - REPAIRED & STABILIZED
+// CORE FUNCTIONALITY - RESTORED
 // ============================================
 
 const STORAGE_KEY = 'timelessScentProductsV4';
-const WHATSAPP_URL = 'https://wa.me/6288805204080';
+const WHATSAPP_URL = 'https://wa.me/6289682007177';
 const SHOPEE_URL = 'https://shopee.co.id/timelessscent__';
 
-// State Management
-let state = {
-    lang: localStorage.getItem('ts_lang') || 'en',
-    theme: localStorage.getItem('ts_theme') || 'dark'
-};
-
-// --- Theme System ---
-function applyTheme() {
-    document.documentElement.setAttribute('data-theme', state.theme);
-    localStorage.setItem('ts_theme', state.theme);
-    const body = document.body;
-    if (body) body.setAttribute('data-theme', state.theme);
-}
-
-function toggleTheme() {
-    state.theme = state.theme === 'dark' ? 'light' : 'dark';
-    applyTheme();
-}
-
-// --- Translation System ---
-const translations = {
-    en: {
-        nav_home: "Home",
-        nav_products: "Collection",
-        nav_contact: "Contact",
-        nav_admin: "Admin",
-        hero_sub: "Where Luxury Meets Fragrance",
-        hero_cta: "Explore Collection",
-        feat_title: "Featured Masterpieces",
-        view_details: "View Details",
-        order_now: "Order Now",
-        notes_top: "Top Notes",
-        notes_heart: "Heart Notes",
-        notes_base: "Base Notes"
-    },
-    ar: {
-        nav_home: "الرئيسية",
-        nav_products: "المجموعة",
-        nav_contact: "تواصل معنا",
-        nav_admin: "الإدارة",
-        hero_sub: "حيث تلتقي الفخامة بالعطور الفاخرة",
-        hero_cta: "استكشف المجموعة",
-        feat_title: "روائع مختارة",
-        view_details: "التفاصيل",
-        order_now: "اطلب الآن",
-        notes_top: "قمة العطر",
-        notes_heart: "قلب العطر",
-        notes_base: "قاعدة العطر"
-    }
-};
-
-function t(key) { return translations[state.lang][key] || key; }
-
-function applyLang() {
-    document.documentElement.lang = state.lang;
-    document.documentElement.dir = state.lang === 'ar' ? 'rtl' : 'ltr';
-
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[state.lang][key]) el.textContent = translations[state.lang][key];
-    });
-
-    const langToggle = document.getElementById('langToggle');
-    if (langToggle) langToggle.textContent = state.lang.toUpperCase();
-    localStorage.setItem('ts_lang', state.lang);
-}
-
-function toggleLanguage() {
-    state.lang = state.lang === 'en' ? 'ar' : 'en';
-    applyLang();
-    closeSidebar();
-}
-
-// --- Navigation Drawer ---
-function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('active');
-    document.getElementById('sidebarOverlay').classList.toggle('active');
-}
-
-function closeSidebar() {
-    document.getElementById('sidebar').classList.remove('active');
-    document.getElementById('sidebarOverlay').classList.remove('active');
-}
-
-// --- Product Handling ---
 function getProducts() {
     const products = localStorage.getItem(STORAGE_KEY);
     return products ? JSON.parse(products) : [];
 }
 
-function createProductCard(product, index) {
+function createProductCard(product) {
     const card = document.createElement('div');
-    card.className = 'product-card reveal';
+    card.className = 'product-card';
     card.innerHTML = `
-    <div class="product-image">
-      <img src="${product.image}" alt="${product.name}" loading="lazy" style="max-height: 250px;">
-    </div>
-    <div class="product-info">
-      <h3 class="product-name">${product.name}</h3>
-      <a href="product.html?id=${product.id}" class="btn btn-primary" data-i18n="view_details">${t('view_details')}</a>
-    </div>
-  `;
+        <div class="product-image">
+            <img src="${product.image}" alt="${product.name}" loading="lazy">
+        </div>
+        <div class="product-info">
+            <h3 class="product-name">${product.name}</h3>
+            <a href="product.html?id=${product.id}" class="btn btn-primary">View Details</a>
+        </div>
+    `;
     return card;
 }
 
 function loadFeaturedProducts() {
     const grid = document.getElementById('featuredGrid');
     if (!grid) return;
-    const products = getProducts().slice(0, 3);
+    const products = getProducts();
+    const featuredIds = ['perfume_aeon', 'perfume_qessah', 'perfume_scandal'];
+    const featured = products.filter(p => featuredIds.includes(p.id));
+
     grid.innerHTML = '';
-    products.forEach((p, i) => grid.appendChild(createProductCard(p, i)));
-    observeElements();
+    featured.forEach(p => grid.appendChild(createProductCard(p)));
 }
 
 function loadAllProducts() {
@@ -125,65 +42,72 @@ function loadAllProducts() {
     if (!grid) return;
     const products = getProducts();
     grid.innerHTML = '';
-    products.forEach((p, i) => grid.appendChild(createProductCard(p, i)));
-    observeElements();
+    products.forEach(p => grid.appendChild(createProductCard(p)));
 }
 
 function loadProductDetail() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
-    const product = getProducts().find(p => p.id === id);
+    const products = getProducts();
+    const product = products.find(p => p.id === id);
     const container = document.getElementById('productContainer');
+
     if (!product || !container) return;
 
+    const whatsappLink = `${WHATSAPP_URL}?text=Hi Timeless Scent! I'm interested in ${product.name}`;
+
     container.innerHTML = `
-    <div class="product-detail-grid">
-      <div class="detail-image reveal"><img src="${product.image}" alt="${product.name}"></div>
-      <div class="detail-content reveal">
-        <h1>${product.name}</h1>
-        <p>${product.description}</p>
-        <div class="detail-notes">
-          <div class="note-item"><h4>${t('notes_top')}</h4><p>${product.top_notes.join(', ')}</p></div>
-          <div class="note-item"><h4>${t('notes_heart')}</h4><p>${product.heart_notes.join(', ')}</p></div>
-          <div class="note-item"><h4>${t('notes_base')}</h4><p>${product.base_notes.join(', ')}</p></div>
+        <div class="product-container">
+            <div class="product-hero">
+                <img src="${product.image}" alt="${product.name}">
+            </div>
+            <div class="product-details">
+                <h1 class="product-detail-title">${product.name}</h1>
+                <p class="product-detail-character">${product.scent_character}</p>
+                
+                <div class="fragrance-notes">
+                    <div class="notes-category">
+                        <h4>Top Notes</h4>
+                        <p>${product.top_notes.join(', ')}</p>
+                    </div>
+                    <div class="notes-category">
+                        <h4>Heart Notes</h4>
+                        <p>${product.heart_notes.join(', ')}</p>
+                    </div>
+                    <div class="notes-category">
+                        <h4>Base Notes</h4>
+                        <p>${product.base_notes.join(', ')}</p>
+                    </div>
+                </div>
+
+                <div class="product-section">
+                    <h3>Description</h3>
+                    <p>${product.description}</p>
+                </div>
+                
+                <div class="order-options">
+                    <a href="${SHOPEE_URL}" target="_blank" class="btn btn-primary">Order on Shopee</a>
+                    <a href="${whatsappLink}" target="_blank" class="btn btn-secondary">Order via WhatsApp</a>
+                </div>
+            </div>
         </div>
-        <div style="margin-top:40px; display:flex; gap:15px;">
-          <a href="${SHOPEE_URL}" class="btn btn-primary">${t('order_now')}</a>
-          <a href="${WHATSAPP_URL}" class="btn btn-outline">WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  `;
-    observeElements();
+    `;
 }
 
-// --- Scroll Reveal ---
-function observeElements() {
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
-}
-
-// --- Initialization ---
 document.addEventListener('DOMContentLoaded', () => {
-    applyTheme();
-    applyLang();
-
-    const themeBtn = document.getElementById('themeToggle');
-    if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
-
-    const langBtn = document.getElementById('langToggle');
-    if (langBtn) langBtn.addEventListener('click', toggleLanguage);
-
-    // Setup dynamic loading based on current page
     if (document.getElementById('featuredGrid')) loadFeaturedProducts();
     if (document.getElementById('productsGrid')) loadAllProducts();
     if (document.getElementById('productContainer')) loadProductDetail();
 });
+
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+}
+
+function closeSidebar() {
+    document.getElementById('sidebar').classList.remove('active');
+    document.getElementById('sidebarOverlay').classList.remove('active');
+}
