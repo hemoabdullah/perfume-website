@@ -11,39 +11,41 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body data-theme="dark">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">TIMELESS SCENT</a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="products.html" class="nav-link active">Products</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="lang-switcher">
-                <button id="langToggle" onclick="toggleLanguage()" class="lang-btn">EN</button>
+            <div class="nav-controls">
+                <button id="themeToggle" class="icon-btn">🌓</button>
+                <button id="langToggle" class="icon-btn">EN/AR</button>
+                <div class="hamburger" onclick="toggleSidebar()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
 
+    <aside class="sidebar" id="sidebar">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+            <li><a href="products.html" class="nav-link active" data-i18n="nav_products">Collection</a></li>
+            <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+    </aside>
+
     <!-- Page Header -->
-    <section class="page-header">
-        <h1>Our Collection</h1>
-        <p>Discover our curated selection of luxury fragrances</p>
-    </section>
+    <div class="section-header">
+        <h1 data-i18n="nav_products">Collection</h1>
+        <div class="search-bar">
+            <input type="text" id="searchInput" data-i18n="search_placeholder" placeholder="Search...">
+        </div>
+    </div>
 
     <!-- Products -->
-    <section class="products-section">
-        <div class="container">
-            <div class="products-grid" id="productsGrid">
-                <!-- Products will be loaded here by JavaScript -->
-            </div>
-            <div class="empty-state" id="emptyState">
-                <p>No products available yet. <a href="admin.html">Add products</a> through the admin panel.</p>
-            </div>
-        </div>
-    </section>
+    <div class="grid-container" id="productsGrid"></div>
 
     <!-- Footer -->
     <footer class="footer">

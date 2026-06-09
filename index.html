@@ -11,35 +11,43 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body data-theme="dark">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">TIMELESS SCENT</a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="products.html" class="nav-link">Products</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="lang-switcher">
-                <button id="langToggle" onclick="toggleLanguage()" class="lang-btn">EN</button>
+            <div class="nav-controls">
+                <button id="themeToggle" class="icon-btn" aria-label="Toggle Theme">🌓</button>
+                <button id="langToggle" class="icon-btn" aria-label="Toggle Language">EN/AR</button>
+                <div class="hamburger" onclick="toggleSidebar()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
 
+    <!-- Sidebar Drawer (Mobile First) -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+    <aside class="sidebar" id="sidebar">
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a></li>
+            <li><a href="products.html" class="nav-link" data-i18n="nav_products">Collection</a></li>
+            <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+    </aside>
+
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">TIMELESS SCENT</h1>
-            <p class="hero-subtitle">Where Luxury Meets Fragrance</p>
-            <p class="hero-description">Discover the art of fine perfumery. Each scent tells a story of elegance,
-                sophistication, and timeless beauty.</p>
+        <div class="hero-content reveal">
+            <h1 class="hero-title" data-i18n="hero_title">TIMELESS SCENT</h1>
+            <p class="hero-subtitle" data-i18n="hero_sub">Where Luxury Meets Fragrance</p>
             <div class="hero-buttons">
-                <a href="products.html" class="btn btn-primary">Explore Products</a>
-                <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+                <a href="products.html" class="btn btn-primary" data-i18n="hero_cta">Explore Collection</a>
             </div>
         </div>
-        <div class="hero-overlay"></div>
+        <div class="hero-image reveal"></div>
     </section>
 
     <!-- Brand Introduction -->
